@@ -1,0 +1,8 @@
+bpu:
+    增加对clint和jalr的预测，目前的mret和ecall都为无条件跳转
+
+alu共享:
+    clint和lsu中的运算都可以共享alu中的运算资源
+
+output规范：
+    把所有output reg替换为wire类型
