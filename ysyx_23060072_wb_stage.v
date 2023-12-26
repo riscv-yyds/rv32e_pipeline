@@ -1,4 +1,4 @@
-`include "define.v"
+`include "ysyx_23060072_define.v"
 module ysyx_23060072_wb_stage(
     input                           clk,
     input                           rst_n,

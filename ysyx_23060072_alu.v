@@ -1,4 +1,4 @@
-`include "define.v"
+`include "ysyx_23060072_define.v"
 `timescale 1 ns / 1 ps
 module ysyx_23060072_alu(
     // from id_ex_stage

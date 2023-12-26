@@ -1,5 +1,6 @@
-`include "define.v"
-module ysyx_23060072_IFU(
+`include "ysyx_23060072_define.v"
+/*
+module ysyx_23060072_IFU_dpic(
     input           rst_n,
     input  [31:0]   instr_addr_i,
     output [31:0]   inst_rdata_o
@@ -17,3 +18,23 @@ module ysyx_23060072_IFU(
 
 
 endmodule 
+*/
+
+
+module ysyx_23060072_IFU(
+    input  [31:0]   instr_addr_i,
+    output [31:0]   inst_rdata_o
+);
+	
+	reg[31:0] rom[255:0];
+	
+    //rom进行初始�?
+    initial begin
+        $readmemh("./rom_hex.txt", rom);
+    end
+	
+    assign inst_rdata_o = rom[instr_addr_i];
+
+endmodule
+
+

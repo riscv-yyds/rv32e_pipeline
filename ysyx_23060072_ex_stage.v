@@ -1,4 +1,4 @@
-`include "define.v"
+`include "ysyx_23060072_define.v"
 `timescale 1 ns / 1 ps
 module ysyx_23060072_ex_stage(
     input                                   clk,
@@ -82,7 +82,7 @@ module ysyx_23060072_ex_stage(
                                 .csr_addr_i         (csr_addr_i             ),
                                 .operand_a_i        (operand_a              ),
                                 .operand_b_i        (operand_b              ),
-                                .timer_interrupt_i  (timer_interrupt_i      ),
+                                //.timer_interrupt_i  (timer_interrupt_i      ),
                                 .clint_hold_flag_o  (clint_hold_flag_o      ),
                                 .clint_jump_pc_o    (clint_jump_pc_o        ),
                                 .clint_jump_flag_o  (clint_jump_flag_o      ),

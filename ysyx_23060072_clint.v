@@ -1,4 +1,4 @@
-`include "define.v"
+`include "ysyx_23060072_define.v"
 `timescale 1 ns / 1 ps
 module ysyx_23060072_clint(
     input                          clk,
@@ -15,7 +15,7 @@ module ysyx_23060072_clint(
     input    [31:0]                operand_b_i,
 
     // to wb_stage
-    output   [31:0]                csr_rdata_o,
+    output   [31:0]                csr_wb_wdata_o,
     output                         csr_wb_flag_o,
 
     // to controller
@@ -69,7 +69,7 @@ module ysyx_23060072_clint(
     end
 
     reg [31:0] csr_rdata_reg;
-    assign csr_rdata_o = csr_rdata_reg;
+    assign csr_wb_wdata_o = csr_rdata_reg;
     always@(*) begin
         // 根据输入的寄存器地址决定csr的读数据来自哪个csr寄存器
         case(csr_addr_i)

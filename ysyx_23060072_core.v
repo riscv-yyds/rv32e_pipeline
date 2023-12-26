@@ -1,38 +1,16 @@
-`include "define.v"
+`include "ysyx_23060072_define.v"
 `timescale 1 ns / 1 ps
 module ysyx_23060072_core(
     input              clk,
-    input              rst_n,
-
-    // from instruction memory
-    input    [31:0]    instr_rdata_i,
-
-    // from bus
-    input              s0_en_i,
-
-    // from timer
-    input              timer_interrupt_i,
-
-    // from bus
-    input    [31:0]    mem_rdata_i,
-    input              slave_req_i,
-    input              slave_rsp_i,
-
-    // to instruction memory
-    output   [31:0]    instr_addr_o,
-
-    // to data memory
-    output             mem_we_o,
-    output   [31:0]    mem_addr_o,
-    output   [31:0]    mem_wdata_o,
-    output             mem_en_o
+    input              rst_n
 );
 
-
+    // if_stage
     wire [31:0]     if2id_pc;
     wire [31:0]     if2id_instr_rdata;
-    wire            if2id_timer_interrupt;
+    wire            if2id_timer_interrupt = 0;
 
+    // id_stage
     wire [31:0]     id2ex_pc;
     wire            id2ex_timer_interrupt;
     wire [31:0]     id2ex_operand_a;
@@ -50,7 +28,7 @@ module ysyx_23060072_core(
     wire [3:0]      id2ex_multdiv_opcode;
     wire            id2ex_multdiv_en;
 
-
+    // ex_stage
     wire            ex2lsu_wb_flag;            
     wire [1:0]      ex2lsu_LSU_type;            
     wire            ex2lsu_store_flag;            
@@ -62,14 +40,17 @@ module ysyx_23060072_core(
     wire [31:0]     ex2lsu_operand_imm;            
     wire [31:0]     ex2lsu_wb_data_ex;
 
+    // lsu_stage
     wire            lsu2wb_wb_flag    ;
     wire [4:0]      lsu2wb_wb_addr    ;
     wire [31:0]     lsu2wb_wb_data_lsu;
 
+    // wb_stage
     wire            wb2id_wb_flag;
     wire [4:0]      wb2id_wb_reg_addr;
     wire [31:0]     wb2id_wb_reg_data;
 
+    // controller
     wire            if2ctrl_predict_flag;
     wire            ex2ctrl_jump_flag;
     wire            ex2ctrl_clint_hold_flag;
@@ -84,6 +65,7 @@ module ysyx_23060072_core(
     wire [31:0]     ctrl2if_jump_pc;
     wire            clean_flag;
 
+    // forward
     wire [4:0]      id2fw_id_ex_rs1_addr_o;
     wire [4:0]      id2fw_id_ex_rs2_addr_o;
     wire            id2fw_has_rs1;
@@ -98,17 +80,12 @@ module ysyx_23060072_core(
 /*(* DONT_TOUCH = "true|yes" *)*/ ysyx_23060072_if_stage     if_stage( 
                                 .clk                    (clk                    ),
                                 .rst_n                  (rst_n                  ),
-                                .instr_rdata_i          (instr_rdata_i          ),
-                                .s0_en_i                (s0_en_i                ),
                                 .if_hold_flag_i         (ctrl2if_hold_flag      ),
                                 .clean_flag_i           (clean_flag             ),
                                 .jump_pc_i              (ctrl2if_jump_pc        ),
-                                .timer_interrupt_i      (timer_interrupt_i      ),
                                 .pc_o                   (if2id_pc               ),
                                 .predict_flag_o         (if2ctrl_predict_flag   ),
-                                .instr_rdata_o          (if2id_instr_rdata      ),
-                                .timer_interrupt_o      (if2id_timer_interrupt  ),
-                                .instr_addr_o           (instr_addr_o           ));
+                                .instr_rdata_o          (if2id_instr_rdata      ));
 
 
 /*(* DONT_TOUCH = "true|yes" *)*/ ysyx_23060072_id_stage     id_stage( 
@@ -138,8 +115,8 @@ module ysyx_23060072_core(
                                 .wb_flag_o              (id2ex_wb_flag          ),
                                 .multdiv_opcode_o       (id2ex_multdiv_opcode   ),
                                 .multdiv_en_o           (id2ex_multdiv_en       ),
-                                .id_ex_rs1_addr_o       (id2fw_id_ex_rs1_addr   ),
-                                .id_ex_rs2_addr_o       (id2fw_id_ex_rs2_addr   ),
+                                .id2ex_rs1_addr_o       (id2fw_id_ex_rs1_addr   ),
+                                .id2ex_rs2_addr_o       (id2fw_id_ex_rs2_addr   ),
                                 .has_rs1_o              (id2fw_has_rs1          ),
                                 .has_rs2_o              (id2fw_has_rs2          ));
 
@@ -242,8 +219,8 @@ module ysyx_23060072_core(
                                 .lsu2wb_wb_addr         (lsu2wb_wb_addr         ),
                                 .id2ex_rs1_addr         (id2fw_id_ex_rs1_addr   ),
                                 .id2ex_rs2_addr         (id2fw_id_ex_rs2_addr   ),
-                                .ex2lsu_wb_data         (ex2lsu_wb_data         ),
-                                .lsu2wb_wb_data         (lsu2wb_wb_data         ),
+                                .ex2lsu_wb_data_ex      (ex2lsu_wb_data         ),
+                                .lsu2wb_wb_data_lsu     (lsu2wb_wb_data         ),
                                 .id2ex_operand_a        (id2ex_operand_a        ),
                                 .id2ex_operand_b        (id2ex_operand_b        ),
                                 .ex2lsu_operand_b       (ex2lsu_operand_b       ),

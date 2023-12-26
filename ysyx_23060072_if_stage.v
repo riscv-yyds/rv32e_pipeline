@@ -1,4 +1,4 @@
-`include "define.v"
+`include "ysyx_23060072_define.v"
 `timescale 1 ns / 1 ps
 module ysyx_23060072_if_stage(
     input                   clk,
@@ -25,7 +25,7 @@ module ysyx_23060072_if_stage(
     wire [31:0] instr_rdata;
 
     ysyx_23060072_IFU    ifu(
-                   .rst_n           (rst_n          ),
+                   //.rst_n           (rst_n          ),
                    .instr_addr_i    (instr_addr     ),
                    .inst_rdata_o    (instr_rdata    ));
     
