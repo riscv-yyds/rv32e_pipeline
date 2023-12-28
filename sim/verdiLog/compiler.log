@@ -1,0 +1,1661 @@
+*design* DebussyLib (btIdent Verdi_O-2018.09-SP2)
+Command arguments:
+    +define+verilog
+    -f filelist.f
+        ../src/ysyx_23060072_alu.v
+        ../src/ysyx_23060072_clint.v
+        ../src/ysyx_23060072_controller.v
+        ../src/ysyx_23060072_core.v
+        ../src/ysyx_23060072_decoder.v
+        ../src/ysyx_23060072_define.v
+        ../src/ysyx_23060072_ex_stage.v
+        ../src/ysyx_23060072_forward.v
+        ../src/ysyx_23060072_id_stage.v
+        ../src/ysyx_23060072_if_stage.v
+        ../src/ysyx_23060072_IFU.v
+        ../src/ysyx_23060072_lsu_stage.v
+        ../src/ysyx_23060072_LSU.v
+        ../src/ysyx_23060072_regfile.v
+        ../src/ysyx_23060072_simple_bpu.v
+        ../src/ysyx_23060072_wb_stage.v
+        ../tb/ysyx_23060072_tb.v
+
+
+*Error* `include file "ysyx_23060072_define.v" cannot be read
+"../src/ysyx_23060072_alu.v", 1: 
+
+*Error* macro `ysyx_23060072_ALU_LT not defined
+"../src/ysyx_23060072_alu.v", 35: 
+
+*Error* macro `ysyx_23060072_ALU_GE not defined
+"../src/ysyx_23060072_alu.v", 35: 
+
+*Error* macro `ysyx_23060072_ALU_SLT not defined
+"../src/ysyx_23060072_alu.v", 35: 
+
+*Error* Syntax error at )
+"../src/ysyx_23060072_alu.v", 35: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_alu.v", 35: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_alu.v", 35: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_alu.v", 46: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 47: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_alu.v", 47: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_alu.v", 48: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_alu.v", 49: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_alu.v", 50: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 51: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_alu.v", 51: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_alu.v", 52: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_alu.v", 53: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_alu.v", 54: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 55: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_alu.v", 55: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_alu.v", 56: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_alu.v", 57: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_alu.v", 60: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 61: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_alu.v", 61: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_alu.v", 62: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_alu.v", 63: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_alu.v", 64: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 65: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_alu.v", 65: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_alu.v", 66: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_alu.v", 67: 
+
+*Error* Syntax error at else
+"../src/ysyx_23060072_alu.v", 69: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_alu.v", 71: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 72: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_alu.v", 72: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_alu.v", 73: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_alu.v", 74: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_alu.v", 75: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 76: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_alu.v", 76: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_alu.v", 77: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_alu.v", 78: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_alu.v", 79: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 80: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_alu.v", 80: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_alu.v", 81: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_alu.v", 82: 
+
+*Error* Syntax error at [
+"../src/ysyx_23060072_alu.v", 87: 
+
+*Error* Syntax error at always
+"../src/ysyx_23060072_alu.v", 90: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 92: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_alu.v", 93: 
+
+*Error* macro `ysyx_23060072_ALU_JALR not defined
+"../src/ysyx_23060072_alu.v", 95: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 95: 
+
+*Error* macro `ysyx_23060072_ALU_FENCE_I not defined
+"../src/ysyx_23060072_alu.v", 96: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 96: 
+
+*Error* Syntax error at :
+"../src/ysyx_23060072_alu.v", 97: 
+
+*Error* Syntax error at endcase
+"../src/ysyx_23060072_alu.v", 98: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_alu.v", 99: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_alu.v", 100: 
+
+*Error* macro `ysyx_23060072_ALU_LTU not defined
+"../src/ysyx_23060072_alu.v", 108: 
+
+*Error* macro `ysyx_23060072_ALU_LT not defined
+"../src/ysyx_23060072_alu.v", 109: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 109: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_alu.v", 109: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_alu.v", 109: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_alu.v", 109: 
+
+*Error* macro `ysyx_23060072_ALU_GE not defined
+"../src/ysyx_23060072_alu.v", 110: 
+
+*Error* macro `ysyx_23060072_ALU_GEU not defined
+"../src/ysyx_23060072_alu.v", 111: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 111: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_alu.v", 111: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_alu.v", 111: 
+
+*Error* macro `ysyx_23060072_ALU_EQ not defined
+"../src/ysyx_23060072_alu.v", 112: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 112: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_alu.v", 112: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_alu.v", 112: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_alu.v", 112: 
+
+*Error* macro `ysyx_23060072_ALU_NE not defined
+"../src/ysyx_23060072_alu.v", 113: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 113: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_alu.v", 113: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_alu.v", 113: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_alu.v", 113: 
+
+*Error* macro `ysyx_23060072_ALU_JAL not defined
+"../src/ysyx_23060072_alu.v", 114: 
+
+*Error* macro `ysyx_23060072_ALU_JALR not defined
+"../src/ysyx_23060072_alu.v", 115: 
+
+*Error* macro `ysyx_23060072_ALU_FENCE_I not defined
+"../src/ysyx_23060072_alu.v", 116: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 116: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_alu.v", 116: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_alu.v", 117: 
+
+*Error* Syntax error at endcase
+"../src/ysyx_23060072_alu.v", 118: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_alu.v", 119: 
+
+*Error* Syntax error at [
+"../src/ysyx_23060072_alu.v", 123: 
+
+*Error* Syntax error at always
+"../src/ysyx_23060072_alu.v", 126: 
+
+*Error* macro `ysyx_23060072_ALU_ADD not defined
+"../src/ysyx_23060072_alu.v", 128: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 128: 
+
+*Error* macro `ysyx_23060072_ALU_SUB not defined
+"../src/ysyx_23060072_alu.v", 129: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 129: 
+
+*Error* macro `ysyx_23060072_ALU_XOR not defined
+"../src/ysyx_23060072_alu.v", 130: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 130: 
+
+*Error* macro `ysyx_23060072_ALU_OR not defined
+"../src/ysyx_23060072_alu.v", 131: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 131: 
+
+*Error* macro `ysyx_23060072_ALU_AND not defined
+"../src/ysyx_23060072_alu.v", 132: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 132: 
+
+*Error* macro `ysyx_23060072_ALU_SRA not defined
+"../src/ysyx_23060072_alu.v", 133: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 133: 
+
+*Error* macro `ysyx_23060072_ALU_SRL not defined
+"../src/ysyx_23060072_alu.v", 134: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 134: 
+
+*Error* macro `ysyx_23060072_ALU_SLL not defined
+"../src/ysyx_23060072_alu.v", 135: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 135: 
+
+*Error* macro `ysyx_23060072_ALU_SLT not defined
+"../src/ysyx_23060072_alu.v", 136: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 136: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_alu.v", 136: 
+
+*Error* macro `ysyx_23060072_ALU_SLTU not defined
+"../src/ysyx_23060072_alu.v", 137: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 137: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_alu.v", 137: 
+
+*Error* macro `ysyx_23060072_ALU_JAL not defined
+"../src/ysyx_23060072_alu.v", 138: 
+
+*Error* macro `ysyx_23060072_ALU_JALR not defined
+"../src/ysyx_23060072_alu.v", 139: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_alu.v", 139: 
+
+*Error* Syntax error at :
+"../src/ysyx_23060072_alu.v", 140: 
+
+*Error* Syntax error at endcase
+"../src/ysyx_23060072_alu.v", 141: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_alu.v", 142: 
+
+*Error* illegal LHS in quasi continuous assignment
+"../src/ysyx_23060072_alu.v", 88: 
+
+*Error* illegal LHS in quasi continuous assignment
+"../src/ysyx_23060072_alu.v", 124: 
+
+*Error* `include file "ysyx_23060072_define.v" cannot be read
+"../src/ysyx_23060072_clint.v", 1: 
+
+*Error* macro `ysyx_23060072_CSR_MHARTID not defined
+"../src/ysyx_23060072_clint.v", 76: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_clint.v", 76: 
+
+*Error* macro `ysyx_23060072_CSR_MSTATUS not defined
+"../src/ysyx_23060072_clint.v", 77: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_clint.v", 77: 
+
+*Error* macro `ysyx_23060072_CSR_MISA not defined
+"../src/ysyx_23060072_clint.v", 78: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_clint.v", 78: 
+
+*Error* macro `ysyx_23060072_CSR_MIE not defined
+"../src/ysyx_23060072_clint.v", 79: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_clint.v", 79: 
+
+*Error* macro `ysyx_23060072_CSR_MTVEC not defined
+"../src/ysyx_23060072_clint.v", 80: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_clint.v", 80: 
+
+*Error* macro `ysyx_23060072_CSR_MSCRATCH not defined
+"../src/ysyx_23060072_clint.v", 81: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_clint.v", 81: 
+
+*Error* macro `ysyx_23060072_CSR_MEPC not defined
+"../src/ysyx_23060072_clint.v", 82: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_clint.v", 82: 
+
+*Error* macro `ysyx_23060072_CSR_MCAUSE not defined
+"../src/ysyx_23060072_clint.v", 83: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_clint.v", 83: 
+
+*Error* macro `ysyx_23060072_CSR_MTVAL not defined
+"../src/ysyx_23060072_clint.v", 84: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_clint.v", 84: 
+
+*Error* macro `ysyx_23060072_CSR_MIP not defined
+"../src/ysyx_23060072_clint.v", 85: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_clint.v", 85: 
+
+*Error* macro `ysyx_23060072_CSR_CYCLE not defined
+"../src/ysyx_23060072_clint.v", 86: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_clint.v", 86: 
+
+*Error* macro `ysyx_23060072_CSR_CYCLEH not defined
+"../src/ysyx_23060072_clint.v", 87: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_clint.v", 87: 
+
+*Error* macro `ysyx_23060072_CSR_MSTATUS not defined
+"../src/ysyx_23060072_clint.v", 110: 
+
+*Error* Syntax error at ;
+"../src/ysyx_23060072_clint.v", 110: 
+
+*Error* macro `ysyx_23060072_CSR_MIE not defined
+"../src/ysyx_23060072_clint.v", 111: 
+
+*Error* Syntax error at ;
+"../src/ysyx_23060072_clint.v", 111: 
+
+*Error* macro `ysyx_23060072_CSR_MTVEC not defined
+"../src/ysyx_23060072_clint.v", 112: 
+
+*Error* Syntax error at ;
+"../src/ysyx_23060072_clint.v", 112: 
+
+*Error* macro `ysyx_23060072_CSR_MSCRATCH not defined
+"../src/ysyx_23060072_clint.v", 113: 
+
+*Error* Syntax error at ;
+"../src/ysyx_23060072_clint.v", 113: 
+
+*Error* macro `ysyx_23060072_CSR_MEPC not defined
+"../src/ysyx_23060072_clint.v", 114: 
+
+*Error* Syntax error at ;
+"../src/ysyx_23060072_clint.v", 114: 
+
+*Error* macro `ysyx_23060072_CSR_MCAUSE not defined
+"../src/ysyx_23060072_clint.v", 115: 
+
+*Error* Syntax error at ;
+"../src/ysyx_23060072_clint.v", 115: 
+
+*Error* macro `ysyx_23060072_CSR_MTVAL not defined
+"../src/ysyx_23060072_clint.v", 116: 
+
+*Error* Syntax error at ;
+"../src/ysyx_23060072_clint.v", 116: 
+
+*Error* macro `ysyx_23060072_CSR_MIP not defined
+"../src/ysyx_23060072_clint.v", 117: 
+
+*Error* Syntax error at ;
+"../src/ysyx_23060072_clint.v", 117: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_clint.v", 135: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_clint.v", 135: 
+
+*Error* Syntax error at always
+"../src/ysyx_23060072_clint.v", 138: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 140: 
+
+*Error* Syntax error at else
+"../src/ysyx_23060072_clint.v", 141: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 142: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_clint.v", 143: 
+
+*Error* macro `ysyx_23060072_CLINT_ECALL not defined
+"../src/ysyx_23060072_clint.v", 155: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_clint.v", 155: 
+
+*Error* macro `ysyx_23060072_CLINT_EBREAK not defined
+"../src/ysyx_23060072_clint.v", 156: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_clint.v", 156: 
+
+*Error* macro `ysyx_23060072_CLINT_MRET not defined
+"../src/ysyx_23060072_clint.v", 157: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_clint.v", 157: 
+
+*Error* macro `ysyx_23060072_CLINT_CSRRW not defined
+"../src/ysyx_23060072_clint.v", 158: 
+
+*Error* macro `ysyx_23060072_CLINT_CSRRS not defined
+"../src/ysyx_23060072_clint.v", 159: 
+
+*Error* macro `ysyx_23060072_CLINT_CSRRC not defined
+"../src/ysyx_23060072_clint.v", 160: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_clint.v", 160: 
+
+*Error* macro `ysyx_23060072_CLINT_NONE not defined
+"../src/ysyx_23060072_clint.v", 161: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_clint.v", 161: 
+
+*Error* macro `ysyx_23060072_CSR_MHARTID not defined
+"../src/ysyx_23060072_clint.v", 186: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_clint.v", 188: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_clint.v", 189: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_clint.v", 195: 
+
+*Error* macro `ysyx_23060072_CSR_MHARTID not defined
+"../src/ysyx_23060072_clint.v", 198: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_clint.v", 199: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_clint.v", 203: 
+
+*Error* macro `ysyx_23060072_CLINT_CSRRW not defined
+"../src/ysyx_23060072_clint.v", 206: 
+
+*Error* Syntax error at begin
+"../src/ysyx_23060072_clint.v", 206: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_clint.v", 209: 
+
+*Error* macro `ysyx_23060072_CLINT_CSRRS not defined
+"../src/ysyx_23060072_clint.v", 212: 
+
+*Error* Syntax error at begin
+"../src/ysyx_23060072_clint.v", 212: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_clint.v", 215: 
+
+*Error* macro `ysyx_23060072_CLINT_CSRRC not defined
+"../src/ysyx_23060072_clint.v", 218: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_clint.v", 221: 
+
+*Error* macro `ysyx_23060072_CLINT_MRET not defined
+"../src/ysyx_23060072_clint.v", 224: 
+
+*Error* macro `ysyx_23060072_CLINT_ECALL not defined
+"../src/ysyx_23060072_clint.v", 225: 
+
+*Error* macro `ysyx_23060072_CLINT_EBREAK not defined
+"../src/ysyx_23060072_clint.v", 226: 
+
+*Error* macro `ysyx_23060072_CLINT_NONE not defined
+"../src/ysyx_23060072_clint.v", 227: 
+
+*Error* macro `ysyx_23060072_CSR_MHARTID not defined
+"../src/ysyx_23060072_clint.v", 228: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_clint.v", 230: 
+
+*Error* Syntax error at default
+"../src/ysyx_23060072_clint.v", 233: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 234: 
+
+*Error* macro `ysyx_23060072_CSR_MHARTID not defined
+"../src/ysyx_23060072_clint.v", 234: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 235: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 236: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_clint.v", 236: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 237: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_clint.v", 238: 
+
+*Error* Syntax error at endcase
+"../src/ysyx_23060072_clint.v", 239: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_clint.v", 240: 
+
+*Error* usage of IDENT: statement is supported only if the option '-sv' is specified
+"../src/ysyx_23060072_clint.v", 241: 
+
+*Warning* symbol UP_MCAUSE duplicated
+"../src/ysyx_23060072_clint.v", 241: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 242: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_clint.v", 242: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 243: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 244: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 246: 
+
+*Error* macro `ysyx_23060072_CSR_MCAUSE not defined
+"../src/ysyx_23060072_clint.v", 246: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 247: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 248: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_clint.v", 248: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_clint.v", 249: 
+
+*Error* macro `ysyx_23060072_CLINT_ECALL not defined
+"../src/ysyx_23060072_clint.v", 251: 
+
+*Error* Syntax error at begin
+"../src/ysyx_23060072_clint.v", 251: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 252: 
+
+*Error* macro `ysyx_23060072_CSR_MCAUSE not defined
+"../src/ysyx_23060072_clint.v", 252: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 253: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 254: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_clint.v", 254: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_clint.v", 255: 
+
+*Error* macro `ysyx_23060072_CLINT_EBREAK not defined
+"../src/ysyx_23060072_clint.v", 256: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 257: 
+
+*Error* macro `ysyx_23060072_CSR_MCAUSE not defined
+"../src/ysyx_23060072_clint.v", 257: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 258: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 259: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_clint.v", 259: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_clint.v", 260: 
+
+*Error* Syntax error at default
+"../src/ysyx_23060072_clint.v", 261: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 262: 
+
+*Error* macro `ysyx_23060072_CSR_MHARTID not defined
+"../src/ysyx_23060072_clint.v", 262: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 263: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 264: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_clint.v", 264: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_clint.v", 265: 
+
+*Error* Syntax error at endcase
+"../src/ysyx_23060072_clint.v", 266: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_clint.v", 267: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_clint.v", 268: 
+
+*Error* usage of IDENT: statement is supported only if the option '-sv' is specified
+"../src/ysyx_23060072_clint.v", 269: 
+
+*Warning* symbol UP_MEPC duplicated
+"../src/ysyx_23060072_clint.v", 269: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 270: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_clint.v", 270: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 271: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 272: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 274: 
+
+*Error* macro `ysyx_23060072_CSR_MEPC not defined
+"../src/ysyx_23060072_clint.v", 274: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 275: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 277: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_clint.v", 277: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_clint.v", 278: 
+
+*Error* macro `ysyx_23060072_CLINT_EBREAK not defined
+"../src/ysyx_23060072_clint.v", 280: 
+
+*Error* macro `ysyx_23060072_CLINT_ECALL not defined
+"../src/ysyx_23060072_clint.v", 281: 
+
+*Error* Syntax error at begin
+"../src/ysyx_23060072_clint.v", 281: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 282: 
+
+*Error* macro `ysyx_23060072_CSR_MEPC not defined
+"../src/ysyx_23060072_clint.v", 282: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 283: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 284: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_clint.v", 284: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_clint.v", 285: 
+
+*Error* Syntax error at default
+"../src/ysyx_23060072_clint.v", 286: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 287: 
+
+*Error* macro `ysyx_23060072_CSR_MHARTID not defined
+"../src/ysyx_23060072_clint.v", 287: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 288: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 289: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_clint.v", 289: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_clint.v", 290: 
+
+*Error* Syntax error at endcase
+"../src/ysyx_23060072_clint.v", 291: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_clint.v", 292: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_clint.v", 293: 
+
+*Error* usage of IDENT: statement is supported only if the option '-sv' is specified
+"../src/ysyx_23060072_clint.v", 294: 
+
+*Warning* symbol UP_MSTATUS duplicated
+"../src/ysyx_23060072_clint.v", 294: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 295: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_clint.v", 295: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 296: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 297: 
+
+*Error* macro `ysyx_23060072_CLINT_MRET not defined
+"../src/ysyx_23060072_clint.v", 298: 
+
+*Error* Syntax error at begin
+"../src/ysyx_23060072_clint.v", 298: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 299: 
+
+*Error* macro `ysyx_23060072_CSR_MSTATUS not defined
+"../src/ysyx_23060072_clint.v", 299: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 300: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 301: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_clint.v", 301: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_clint.v", 302: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 303: 
+
+*Error* macro `ysyx_23060072_CSR_MSTATUS not defined
+"../src/ysyx_23060072_clint.v", 303: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 304: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 305: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_clint.v", 305: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_clint.v", 306: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_clint.v", 307: 
+
+*Error* usage of IDENT: statement is supported only if the option '-sv' is specified
+"../src/ysyx_23060072_clint.v", 308: 
+
+*Warning* symbol EXC_JUMP duplicated
+"../src/ysyx_23060072_clint.v", 308: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 309: 
+
+*Error* macro `ysyx_23060072_CSR_MHARTID not defined
+"../src/ysyx_23060072_clint.v", 309: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 310: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 311: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_clint.v", 311: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 312: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_clint.v", 312: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 313: 
+
+*Error* macro `ysyx_23060072_CLINT_MRET not defined
+"../src/ysyx_23060072_clint.v", 314: 
+
+*Error* Syntax error at ;
+"../src/ysyx_23060072_clint.v", 315: 
+
+*Error* Syntax error at else
+"../src/ysyx_23060072_clint.v", 316: 
+
+*Error* Syntax error at <=
+"../src/ysyx_23060072_clint.v", 317: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_clint.v", 318: 
+
+*Error* Syntax error at endcase
+"../src/ysyx_23060072_clint.v", 319: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_clint.v", 320: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_clint.v", 321: 
+
+*Error* `include file "ysyx_23060072_define.v" cannot be read
+"../src/ysyx_23060072_controller.v", 1: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_controller.v", 33: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_controller.v", 33: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_controller.v", 33: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_controller.v", 33: 
+
+*Error* Syntax error at assign
+"../src/ysyx_23060072_controller.v", 34: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_controller.v", 34: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_controller.v", 40: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_controller.v", 40: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_controller.v", 40: 
+
+*Error* Syntax error at assign
+"../src/ysyx_23060072_controller.v", 41: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_controller.v", 41: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_controller.v", 41: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_controller.v", 41: 
+
+*Error* `include file "ysyx_23060072_define.v" cannot be read
+"../src/ysyx_23060072_core.v", 1: 
+
+*Error* `include file "ysyx_23060072_define.v" cannot be read
+"../src/ysyx_23060072_decoder.v", 1: 
+
+*Error* macro `ysyx_23060072_OPCODE_SYSTEM not defined
+"../src/ysyx_23060072_decoder.v", 87: 
+
+*Error* Syntax error at begin
+"../src/ysyx_23060072_decoder.v", 87: 
+
+*Error* macro `ysyx_23060072_CLINT_MRET not defined
+"../src/ysyx_23060072_decoder.v", 91: 
+
+*Error* Syntax error at :
+"../src/ysyx_23060072_decoder.v", 92: 
+
+*Error* macro `ysyx_23060072_CLINT_EBREAK not defined
+"../src/ysyx_23060072_decoder.v", 92: 
+
+*Error* macro `ysyx_23060072_CLINT_ECALL not defined
+"../src/ysyx_23060072_decoder.v", 93: 
+
+*Error* Syntax error at default
+"../src/ysyx_23060072_decoder.v", 94: 
+
+*Error* macro `ysyx_23060072_CLINT_NONE not defined
+"../src/ysyx_23060072_decoder.v", 94: 
+
+*Error* macro `ysyx_23060072_CLINT_CSRRW not defined
+"../src/ysyx_23060072_decoder.v", 98: 
+
+*Error* Syntax error at ,
+"../src/ysyx_23060072_decoder.v", 99: 
+
+*Error* macro `ysyx_23060072_CLINT_CSRRS not defined
+"../src/ysyx_23060072_decoder.v", 100: 
+
+*Error* Syntax error at ,
+"../src/ysyx_23060072_decoder.v", 101: 
+
+*Error* macro `ysyx_23060072_CLINT_CSRRC not defined
+"../src/ysyx_23060072_decoder.v", 102: 
+
+*Error* Syntax error at default
+"../src/ysyx_23060072_decoder.v", 103: 
+
+*Error* macro `ysyx_23060072_CLINT_NONE not defined
+"../src/ysyx_23060072_decoder.v", 103: 
+
+*Error* Syntax error at else
+"../src/ysyx_23060072_decoder.v", 105: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_decoder.v", 106: 
+
+*Error* macro `ysyx_23060072_CLINT_NONE not defined
+"../src/ysyx_23060072_decoder.v", 106: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_decoder.v", 107: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_decoder.v", 108: 
+
+*Error* macro `ysyx_23060072_OPCODE_OP not defined
+"../src/ysyx_23060072_decoder.v", 119: 
+
+*Error* Syntax error at &&
+"../src/ysyx_23060072_decoder.v", 119: 
+
+*Error* macro `ysyx_23060072_OP_MUL not defined
+"../src/ysyx_23060072_decoder.v", 122: 
+
+*Error* Syntax error at :
+"../src/ysyx_23060072_decoder.v", 123: 
+
+*Error* macro `ysyx_23060072_OP_MULH not defined
+"../src/ysyx_23060072_decoder.v", 123: 
+
+*Error* macro `ysyx_23060072_OP_MULHSU not defined
+"../src/ysyx_23060072_decoder.v", 124: 
+
+*Error* Syntax error at :
+"../src/ysyx_23060072_decoder.v", 125: 
+
+*Error* macro `ysyx_23060072_OP_MULHU not defined
+"../src/ysyx_23060072_decoder.v", 125: 
+
+*Error* macro `ysyx_23060072_OP_DIV not defined
+"../src/ysyx_23060072_decoder.v", 126: 
+
+*Error* Syntax error at :
+"../src/ysyx_23060072_decoder.v", 127: 
+
+*Error* macro `ysyx_23060072_OP_DIVU not defined
+"../src/ysyx_23060072_decoder.v", 127: 
+
+*Error* macro `ysyx_23060072_OP_REM not defined
+"../src/ysyx_23060072_decoder.v", 128: 
+
+*Error* Syntax error at :
+"../src/ysyx_23060072_decoder.v", 129: 
+
+*Error* macro `ysyx_23060072_OP_REMU not defined
+"../src/ysyx_23060072_decoder.v", 129: 
+
+*Error* macro `ysyx_23060072_OP_NONE not defined
+"../src/ysyx_23060072_decoder.v", 130: 
+
+*Error* Syntax error at endcase
+"../src/ysyx_23060072_decoder.v", 131: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_decoder.v", 132: 
+
+*Error* macro `ysyx_23060072_OP_NONE not defined
+"../src/ysyx_23060072_decoder.v", 134: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_decoder.v", 135: 
+
+*Error* macro `ysyx_23060072_OPCODE_LUI not defined
+"../src/ysyx_23060072_decoder.v", 148: 
+
+*Error* macro `ysyx_23060072_OPCODE_AUIPC not defined
+"../src/ysyx_23060072_decoder.v", 148: 
+
+*Error* macro `ysyx_23060072_OPCODE_JAL not defined
+"../src/ysyx_23060072_decoder.v", 148: 
+
+*Error* macro `ysyx_23060072_OPCODE_JALR not defined
+"../src/ysyx_23060072_decoder.v", 148: 
+
+*Error* macro `ysyx_23060072_OPCODE_LOAD not defined
+"../src/ysyx_23060072_decoder.v", 148: 
+
+*Error* macro `ysyx_23060072_OPCODE_OP_IMM not defined
+"../src/ysyx_23060072_decoder.v", 148: 
+
+*Error* macro `ysyx_23060072_OPCODE_OP not defined
+"../src/ysyx_23060072_decoder.v", 148: 
+
+*Error* macro `ysyx_23060072_OPCODE_SYSTEM not defined
+"../src/ysyx_23060072_decoder.v", 148: 
+
+*Error* Syntax error at &&
+"../src/ysyx_23060072_decoder.v", 148: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_decoder.v", 148: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_decoder.v", 148: 
+
+*Error* macro `ysyx_23060072_OPCODE_LOAD not defined
+"../src/ysyx_23060072_decoder.v", 150: 
+
+*Error* Syntax error at ?
+"../src/ysyx_23060072_decoder.v", 150: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_decoder.v", 150: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_decoder.v", 150: 
+
+*Error* macro `ysyx_23060072_OPCODE_STORE not defined
+"../src/ysyx_23060072_decoder.v", 151: 
+
+*Error* Syntax error at ?
+"../src/ysyx_23060072_decoder.v", 151: 
+
+*Error* macro `ysyx_23060072_enable not defined
+"../src/ysyx_23060072_decoder.v", 151: 
+
+*Error* macro `ysyx_23060072_disable not defined
+"../src/ysyx_23060072_decoder.v", 151: 
+
+*Error* macro `ysyx_23060072_OPCODE_LUI not defined
+"../src/ysyx_23060072_decoder.v", 190: 
+
+*Error* Syntax error at begin
+"../src/ysyx_23060072_decoder.v", 190: 
+
+*Error* macro `ysyx_23060072_ALU_ADD not defined
+"../src/ysyx_23060072_decoder.v", 194: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_decoder.v", 195: 
+
+*Error* macro `ysyx_23060072_OPCODE_AUIPC not defined
+"../src/ysyx_23060072_decoder.v", 197: 
+
+*Error* macro `ysyx_23060072_ALU_ADD not defined
+"../src/ysyx_23060072_decoder.v", 201: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_decoder.v", 202: 
+
+*Error* macro `ysyx_23060072_OPCODE_JAL not defined
+"../src/ysyx_23060072_decoder.v", 204: 
+
+*Error* macro `ysyx_23060072_ALU_JAL not defined
+"../src/ysyx_23060072_decoder.v", 208: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_decoder.v", 209: 
+
+*Error* macro `ysyx_23060072_OPCODE_JALR not defined
+"../src/ysyx_23060072_decoder.v", 211: 
+
+*Error* macro `ysyx_23060072_ALU_JALR not defined
+"../src/ysyx_23060072_decoder.v", 215: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_decoder.v", 216: 
+
+*Error* macro `ysyx_23060072_OPCODE_BRANCH not defined
+"../src/ysyx_23060072_decoder.v", 218: 
+
+*Error* macro `ysyx_23060072_ALU_EQ not defined
+"../src/ysyx_23060072_decoder.v", 223: 
+
+*Error* Syntax error at :
+"../src/ysyx_23060072_decoder.v", 224: 
+
+*Error* macro `ysyx_23060072_ALU_NE not defined
+"../src/ysyx_23060072_decoder.v", 224: 
+
+*Error* macro `ysyx_23060072_ALU_LT not defined
+"../src/ysyx_23060072_decoder.v", 225: 
+
+*Error* Syntax error at :
+"../src/ysyx_23060072_decoder.v", 226: 
+
+*Error* macro `ysyx_23060072_ALU_GE not defined
+"../src/ysyx_23060072_decoder.v", 226: 
+
+*Error* macro `ysyx_23060072_ALU_LTU not defined
+"../src/ysyx_23060072_decoder.v", 227: 
+
+*Error* Syntax error at :
+"../src/ysyx_23060072_decoder.v", 228: 
+
+*Error* macro `ysyx_23060072_ALU_GEU not defined
+"../src/ysyx_23060072_decoder.v", 228: 
+
+*Error* macro `ysyx_23060072_ALU_NOP not defined
+"../src/ysyx_23060072_decoder.v", 229: 
+
+*Error* Syntax error at endcase
+"../src/ysyx_23060072_decoder.v", 230: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_decoder.v", 231: 
+
+*Error* macro `ysyx_23060072_OPCODE_LOAD not defined
+"../src/ysyx_23060072_decoder.v", 233: 
+
+*Error* macro `ysyx_23060072_ALU_NOP not defined
+"../src/ysyx_23060072_decoder.v", 237: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_decoder.v", 238: 
+
+*Error* macro `ysyx_23060072_OPCODE_STORE not defined
+"../src/ysyx_23060072_decoder.v", 240: 
+
+*Error* macro `ysyx_23060072_ALU_NOP not defined
+"../src/ysyx_23060072_decoder.v", 244: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_decoder.v", 245: 
+
+*Error* macro `ysyx_23060072_OPCODE_OP_IMM not defined
+"../src/ysyx_23060072_decoder.v", 247: 
+
+*Error* macro `ysyx_23060072_ALU_ADD not defined
+"../src/ysyx_23060072_decoder.v", 252: 
+
+*Error* Syntax error at :
+"../src/ysyx_23060072_decoder.v", 253: 
+
+*Error* macro `ysyx_23060072_ALU_SLT not defined
+"../src/ysyx_23060072_decoder.v", 253: 
+
+*Error* macro `ysyx_23060072_ALU_SLTU not defined
+"../src/ysyx_23060072_decoder.v", 254: 
+
+*Error* Syntax error at :
+"../src/ysyx_23060072_decoder.v", 255: 
+
+*Error* macro `ysyx_23060072_ALU_XOR not defined
+"../src/ysyx_23060072_decoder.v", 255: 
+
+*Error* macro `ysyx_23060072_ALU_OR not defined
+"../src/ysyx_23060072_decoder.v", 256: 
+
+*Error* Syntax error at :
+"../src/ysyx_23060072_decoder.v", 257: 
+
+*Error* macro `ysyx_23060072_ALU_AND not defined
+"../src/ysyx_23060072_decoder.v", 257: 
+
+*Error* macro `ysyx_23060072_ALU_SLL not defined
+"../src/ysyx_23060072_decoder.v", 258: 
+
+*Error* Syntax error at :
+"../src/ysyx_23060072_decoder.v", 259: 
+
+*Error* Syntax error at if
+"../src/ysyx_23060072_decoder.v", 260: 
+
+*Error* macro `ysyx_23060072_ALU_SRA not defined
+"../src/ysyx_23060072_decoder.v", 260: 
+
+*Error* Syntax error at else
+"../src/ysyx_23060072_decoder.v", 261: 
+
+*Error* macro `ysyx_23060072_ALU_SRL not defined
+"../src/ysyx_23060072_decoder.v", 261: 
+
+*Error* Syntax error at default
+"../src/ysyx_23060072_decoder.v", 263: 
+
+*Error* macro `ysyx_23060072_ALU_NOP not defined
+"../src/ysyx_23060072_decoder.v", 263: 
+
+*Error* Syntax error at endcase
+"../src/ysyx_23060072_decoder.v", 264: 
+
+*Error* macro `ysyx_23060072_OPCODE_OP not defined
+"../src/ysyx_23060072_decoder.v", 267: 
+
+*Error* macro `ysyx_23060072_ALU_SUB not defined
+"../src/ysyx_23060072_decoder.v", 273: 
+
+*Error* Syntax error at else
+"../src/ysyx_23060072_decoder.v", 274: 
+
+*Error* macro `ysyx_23060072_ALU_ADD not defined
+"../src/ysyx_23060072_decoder.v", 274: 
+
+*Error* macro `ysyx_23060072_ALU_SLL not defined
+"../src/ysyx_23060072_decoder.v", 276: 
+
+*Error* Syntax error at :
+"../src/ysyx_23060072_decoder.v", 277: 
+
+*Error* macro `ysyx_23060072_ALU_SLT not defined
+"../src/ysyx_23060072_decoder.v", 277: 
+
+*Error* macro `ysyx_23060072_ALU_SLTU not defined
+"../src/ysyx_23060072_decoder.v", 278: 
+
+*Error* Syntax error at :
+"../src/ysyx_23060072_decoder.v", 279: 
+
+*Error* macro `ysyx_23060072_ALU_XOR not defined
+"../src/ysyx_23060072_decoder.v", 279: 
+
+*Error* macro `ysyx_23060072_ALU_SRA not defined
+"../src/ysyx_23060072_decoder.v", 281: 
+
+*Error* Syntax error at else
+"../src/ysyx_23060072_decoder.v", 282: 
+
+*Error* macro `ysyx_23060072_ALU_SRL not defined
+"../src/ysyx_23060072_decoder.v", 282: 
+
+*Error* macro `ysyx_23060072_ALU_OR not defined
+"../src/ysyx_23060072_decoder.v", 284: 
+
+*Error* Syntax error at :
+"../src/ysyx_23060072_decoder.v", 285: 
+
+*Error* macro `ysyx_23060072_ALU_AND not defined
+"../src/ysyx_23060072_decoder.v", 285: 
+
+*Error* macro `ysyx_23060072_ALU_NOP not defined
+"../src/ysyx_23060072_decoder.v", 286: 
+
+*Error* Syntax error at endcase
+"../src/ysyx_23060072_decoder.v", 287: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_decoder.v", 288: 
+
+*Error* macro `ysyx_23060072_OPCODE_SYSTEM not defined
+"../src/ysyx_23060072_decoder.v", 290: 
+
+*Error* macro `ysyx_23060072_ALU_NOP not defined
+"../src/ysyx_23060072_decoder.v", 296: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_decoder.v", 297: 
+
+*Error* Syntax error at 3'b010
+"../src/ysyx_23060072_decoder.v", 298: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_decoder.v", 299: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_decoder.v", 300: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_decoder.v", 301: 
+
+*Error* macro `ysyx_23060072_ALU_NOP not defined
+"../src/ysyx_23060072_decoder.v", 301: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_decoder.v", 302: 
+
+*Error* Syntax error at 3'b011
+"../src/ysyx_23060072_decoder.v", 303: 
+
+*Error* macro `ysyx_23060072_ALU_NOP not defined
+"../src/ysyx_23060072_decoder.v", 306: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_decoder.v", 307: 
+
+*Error* Syntax error at 3'b101
+"../src/ysyx_23060072_decoder.v", 308: 
+
+*Error* macro `ysyx_23060072_ALU_NOP not defined
+"../src/ysyx_23060072_decoder.v", 311: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_decoder.v", 312: 
+
+*Error* Syntax error at 3'b110
+"../src/ysyx_23060072_decoder.v", 313: 
+
+*Error* macro `ysyx_23060072_ALU_NOP not defined
+"../src/ysyx_23060072_decoder.v", 316: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_decoder.v", 317: 
+
+*Error* Syntax error at 3'b111
+"../src/ysyx_23060072_decoder.v", 318: 
+
+*Error* macro `ysyx_23060072_ALU_NOP not defined
+"../src/ysyx_23060072_decoder.v", 321: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_decoder.v", 322: 
+
+*Error* Syntax error at default
+"../src/ysyx_23060072_decoder.v", 323: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_decoder.v", 324: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_decoder.v", 325: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_decoder.v", 326: 
+
+*Error* macro `ysyx_23060072_ALU_NOP not defined
+"../src/ysyx_23060072_decoder.v", 326: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_decoder.v", 327: 
+
+*Error* Syntax error at endcase
+"../src/ysyx_23060072_decoder.v", 328: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_decoder.v", 329: 
+
+*Error* macro `ysyx_23060072_OPCODE_MISC_MEM not defined
+"../src/ysyx_23060072_decoder.v", 331: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_decoder.v", 332: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_decoder.v", 333: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_decoder.v", 334: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_decoder.v", 336: 
+
+*Error* macro `ysyx_23060072_ALU_NOP not defined
+"../src/ysyx_23060072_decoder.v", 336: 
+
+*Error* Syntax error at 3'b001
+"../src/ysyx_23060072_decoder.v", 337: 
+
+*Error* macro `ysyx_23060072_ALU_FENCE_I not defined
+"../src/ysyx_23060072_decoder.v", 337: 
+
+*Error* Syntax error at :
+"../src/ysyx_23060072_decoder.v", 338: 
+
+*Error* macro `ysyx_23060072_ALU_NOP not defined
+"../src/ysyx_23060072_decoder.v", 338: 
+
+*Error* Syntax error at endcase
+"../src/ysyx_23060072_decoder.v", 339: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_decoder.v", 340: 
+
+*Error* Syntax error at default
+"../src/ysyx_23060072_decoder.v", 342: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_decoder.v", 343: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_decoder.v", 344: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_decoder.v", 345: 
+
+*Error* Syntax error at =
+"../src/ysyx_23060072_decoder.v", 346: 
+
+*Error* macro `ysyx_23060072_ALU_NOP not defined
+"../src/ysyx_23060072_decoder.v", 346: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_decoder.v", 347: 
+
+*Error* Syntax error at endcase
+"../src/ysyx_23060072_decoder.v", 348: 
+
+*Error* Syntax error at end
+"../src/ysyx_23060072_decoder.v", 349: 
+
+*Error* missing condition in if statement
+"../src/ysyx_23060072_decoder.v", 87: 
+
+*Error* missing then statement in if statement
+"../src/ysyx_23060072_decoder.v", 87: 
+
+*Error* missing condition in if statement
+"../src/ysyx_23060072_decoder.v", 119: 
+
+*Error* missing then statement in if statement
+"../src/ysyx_23060072_decoder.v", 119: 
+
+*Error* `include file "ysyx_23060072_define.v" cannot be read
+"../src/ysyx_23060072_ex_stage.v", 1: 
+
+*Error* `include file "ysyx_23060072_define.v" cannot be read
+"../src/ysyx_23060072_id_stage.v", 1: 
+
+*Error* `include file "ysyx_23060072_define.v" cannot be read
+"../src/ysyx_23060072_if_stage.v", 1: 
+
+*Error* `include file "ysyx_23060072_define.v" cannot be read
+"../src/ysyx_23060072_IFU.v", 1: 
+
+*Error* `include file "ysyx_23060072_define.v" cannot be read
+"../src/ysyx_23060072_lsu_stage.v", 1: 
+
+*Error* `include file "ysyx_23060072_define.v" cannot be read
+"../src/ysyx_23060072_LSU.v", 1: 
+
+*Error* `include file "ysyx_23060072_define.v" cannot be read
+"../src/ysyx_23060072_regfile.v", 1: 
+
+*Error* `include file "ysyx_23060072_define.v" cannot be read
+"../src/ysyx_23060072_simple_bpu.v", 1: 
+
+*Error* `include file "ysyx_23060072_define.v" cannot be read
+"../src/ysyx_23060072_wb_stage.v", 1: 
+Highest level modules:
+ysyx_23060072_tb
+
+
+*Error* failed to find identifier jump_pc_reg
+"../src/ysyx_23060072_alu.v", 88: 
+
+*Error* failed to find identifier jump_pc_reg
+"../src/ysyx_23060072_alu.v", 95: 
+
+*Error* failed to find identifier operand_result_reg
+"../src/ysyx_23060072_alu.v", 124: 
+
+*Error* failed to find identifier operand_result_reg
+"../src/ysyx_23060072_alu.v", 128: 
+
+*Warning* port sizes differ (5 vs 1) in port connection (port id2ex_rs1_addr_o)
+"../src/ysyx_23060072_core.v", 118: 
+
+*Warning* port sizes differ (5 vs 1) in port connection (port id2ex_rs2_addr_o)
+"../src/ysyx_23060072_core.v", 119: 
+
+*Warning* port sizes differ (1 vs 32) in port connection (port clint_jump_pc_o)
+"../src/ysyx_23060072_core.v", 148: 
+
+*Warning* port sizes differ (5 vs 32) in port connection (port wb_addr_o)
+"../src/ysyx_23060072_core.v", 155: 
+
+*Warning* port sizes differ (5 vs 32) in port connection (port wb_addr_i)
+"../src/ysyx_23060072_core.v", 171: 
+
+*Warning* port sizes differ (32 vs 5) in port connection (port wb_addr_o)
+"../src/ysyx_23060072_core.v", 190: 
+
+*Warning* port sizes differ (5 vs 32) in port connection (port ex2lsu_wb_addr)
+"../src/ysyx_23060072_core.v", 219: 
+
+*Warning* port sizes differ (5 vs 1) in port connection (port id2ex_rs1_addr)
+"../src/ysyx_23060072_core.v", 221: 
+
+*Warning* port sizes differ (5 vs 1) in port connection (port id2ex_rs2_addr)
+"../src/ysyx_23060072_core.v", 222: 
+
+*Warning* port sizes differ (32 vs 1) in port connection (port ex2lsu_wb_data_ex)
+"../src/ysyx_23060072_core.v", 223: 
+
+*Warning* port sizes differ (32 vs 1) in port connection (port lsu2wb_wb_data_lsu)
+"../src/ysyx_23060072_core.v", 224: 
+
+*Warning* port sizes differ (32 vs 1) in port connection (port operand_a_i)
+"../src/ysyx_23060072_ex_stage.v", 83: 
+
+*Warning* port sizes differ (32 vs 1) in port connection (port operand_b_i)
+"../src/ysyx_23060072_ex_stage.v", 84: 
+
+*Warning* port sizes differ (32 vs 1) in port connection (port clint_jump_pc_o)
+"../src/ysyx_23060072_ex_stage.v", 87: 
+
+*Warning* port sizes differ (4 vs 5) in port connection (port alu_op_o)
+"../src/ysyx_23060072_id_stage.v", 83: 
+Total	526 error(s),   19 warning(s)

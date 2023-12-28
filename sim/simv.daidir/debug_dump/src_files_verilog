@@ -1,0 +1,17 @@
+/home/ICer/myprj/rv32e_debug/src/ysyx_23060072_IFU.v
+/home/ICer/myprj/rv32e_debug/src/ysyx_23060072_LSU.v
+/home/ICer/myprj/rv32e_debug/src/ysyx_23060072_alu.v
+/home/ICer/myprj/rv32e_debug/src/ysyx_23060072_clint.v
+/home/ICer/myprj/rv32e_debug/src/ysyx_23060072_controller.v
+/home/ICer/myprj/rv32e_debug/src/ysyx_23060072_core.v
+/home/ICer/myprj/rv32e_debug/src/ysyx_23060072_decoder.v
+/home/ICer/myprj/rv32e_debug/src/ysyx_23060072_define.v
+/home/ICer/myprj/rv32e_debug/src/ysyx_23060072_ex_stage.v
+/home/ICer/myprj/rv32e_debug/src/ysyx_23060072_forward.v
+/home/ICer/myprj/rv32e_debug/src/ysyx_23060072_id_stage.v
+/home/ICer/myprj/rv32e_debug/src/ysyx_23060072_if_stage.v
+/home/ICer/myprj/rv32e_debug/src/ysyx_23060072_lsu_stage.v
+/home/ICer/myprj/rv32e_debug/src/ysyx_23060072_regfile.v
+/home/ICer/myprj/rv32e_debug/src/ysyx_23060072_simple_bpu.v
+/home/ICer/myprj/rv32e_debug/src/ysyx_23060072_wb_stage.v
+/home/ICer/myprj/rv32e_debug/tb/ysyx_23060072_tb.v
