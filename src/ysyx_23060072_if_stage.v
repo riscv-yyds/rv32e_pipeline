@@ -10,7 +10,7 @@ module ysyx_23060072_if_stage(
     input [31:0]            jump_pc_i,
 
     // to id_ex_stage
-    output reg [31:0]       pc_o,
+    output     [31:0]       pc_o,
     output reg              predict_flag_o,
     output reg [31:0]       instr_rdata_o
 );
@@ -68,22 +68,35 @@ module ysyx_23060072_if_stage(
     assign instr_rdata_next = (clean_flag_i == `ysyx_23060072_enable)?    32'h0000_0013 : instr_rdata;
     assign instr_addr = pc_next;
 
+    // posedge of rst_n
+    reg rst_n_r;
+    always @(posedge clk) begin
+        if (!rst_n)
+            rst_n_r <= 1'b0;
+        else
+            rst_n_r <= 1'b1;
+    end
+
+    wire posedge_rst_n = rst_n & (!rst_n_r);
+
     // pc_reg
     always@(posedge clk) begin
         if (!rst_n)
+            pc_reg <=  32'd0;
+        else if (posedge_rst_n)
             pc_reg <=  32'd0;
         else
             pc_reg <=  pc_next;  
     end
 
+    assign pc_o = pc_reg;
+
     // pipeline (if_stage to id_ex_stage)
     always@(posedge clk) begin
         if(!if_hold_flag_i) begin
-            pc_o <=  pc_reg;
             instr_rdata_o <=  instr_rdata_next;
             predict_flag_o <=  bpu_predict_flag;
         end else begin
-            pc_o <=  pc_o;
             instr_rdata_o <=  instr_rdata_o;
             predict_flag_o <=  predict_flag_o;
         end

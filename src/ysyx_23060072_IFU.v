@@ -30,12 +30,9 @@ module ysyx_23060072_IFU(
 
 	wire [7:0] read_addr = instr_addr_i[9:2];
 
-    //rom进行初始�?
+    //rom initial
     initial begin
-        //$readmemh("./rom_hex.txt", rom);
-        //$readmemb("./rom_binary.txt", u_core.if_stage.ifu.rom);
-        //$readmemb("rom_binary.txt", rom);
-        $readmemh("rom_hex.txt", rom);
+        $readmemh("../bin/lui_auipc.txt", rom);
     end
 	
     assign inst_rdata_o = rom[read_addr];

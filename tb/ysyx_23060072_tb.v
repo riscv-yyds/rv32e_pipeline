@@ -7,7 +7,7 @@ module ysyx_23060072_tb;
     initial begin
         clk = 0;
         rst_n = 0;
-        #80;
+        #100;
         rst_n = 1;
         #5000;
         $finish;

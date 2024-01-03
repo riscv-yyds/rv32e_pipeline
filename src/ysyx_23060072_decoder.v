@@ -59,6 +59,9 @@ module ysyx_23060072_decoder(
     assign  funct7  =   instr_rdata_i[31:25];
     assign  opcode  =   instr_rdata_i[6:0];
 
+    wire opcode_lui     =   (opcode == `ysyx_23060072_OPCODE_LUI);
+    wire opcode_auipc   =   (opcode == `ysyx_23060072_OPCODE_AUIPC);
+
     assign  has_rs1 =       /* U-type */   
                             (opcode != 7'b0110111) 
                         &&  (opcode != 7'b0010111) 

@@ -37,9 +37,9 @@ module ysyx_23060072_forward(
     /* rs1 lsu 前递*/
 	assign forwardA[0] = (lsu2wb_wb_flag && id2ex_has_rs1 && (lsu2wb_wb_addr!=5'd0) && (lsu2wb_wb_addr==id2ex_rs1_addr));
 	
-    /* rs1 ex 前递*/
+    /* rs2 ex 前递*/
 	assign forwardB[1] = (ex2lsu_wb_flag && id2ex_has_rs2 && (ex2lsu_wb_addr!=5'd0) && (ex2lsu_wb_addr==id2ex_rs2_addr));
-    /* rs1 lsu 前递*/
+    /* rs2 lsu 前递*/
 	assign forwardB[0] = (lsu2wb_wb_flag && id2ex_has_rs2 && (lsu2wb_wb_addr!=5'd0) && (lsu2wb_wb_addr==id2ex_rs2_addr));
 
     // 在发生加载——使用型冒险的时候，如果是load后跟着store指令，
