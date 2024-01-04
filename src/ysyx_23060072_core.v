@@ -64,8 +64,8 @@ module ysyx_23060072_core(
     wire            clean_flag;
 
     // forward
-    wire [4:0]      id2fw_id_ex_rs1_addr_o;
-    wire [4:0]      id2fw_id_ex_rs2_addr_o;
+    wire [4:0]      id2fw_id_ex_rs1_addr;
+    wire [4:0]      id2fw_id_ex_rs2_addr;
     wire            id2fw_has_rs1;
     wire            id2fw_has_rs2;
     wire            lsu2fw_load_flag;
@@ -221,7 +221,7 @@ module ysyx_23060072_core(
                                 .id2ex_rs1_addr         (id2fw_id_ex_rs1_addr   ),
                                 .id2ex_rs2_addr         (id2fw_id_ex_rs2_addr   ),
                                 .ex2lsu_wb_data_ex      (ex2lsu_wb_data         ),
-                                .lsu2wb_wb_data_lsu     (lsu2wb_wb_data         ),
+                                .lsu2wb_wb_data_lsu     (lsu2wb_wb_data_lsu     ),
                                 .id2ex_operand_a        (id2fw_operand_a        ),
                                 .id2ex_operand_b        (id2fw_operand_b        ),
                                 .ex2lsu_operand_b       (ex2lsu_operand_b       ),

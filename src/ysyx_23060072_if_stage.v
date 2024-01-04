@@ -10,6 +10,7 @@ module ysyx_23060072_if_stage(
     input [31:0]            jump_pc_i,
 
     // to id_ex_stage
+    //output reg [31:0]       pc_o,
     output     [31:0]       pc_o,
     output reg              predict_flag_o,
     output reg [31:0]       instr_rdata_o
@@ -94,9 +95,11 @@ module ysyx_23060072_if_stage(
     // pipeline (if_stage to id_ex_stage)
     always@(posedge clk) begin
         if(!if_hold_flag_i) begin
+            //pc_o <= pc_reg;
             instr_rdata_o <=  instr_rdata_next;
             predict_flag_o <=  bpu_predict_flag;
         end else begin
+            //pc_o <= pc_o;
             instr_rdata_o <=  instr_rdata_o;
             predict_flag_o <=  predict_flag_o;
         end

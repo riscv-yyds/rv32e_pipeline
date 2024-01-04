@@ -15,9 +15,25 @@ module ysyx_23060072_wb_stage(
     output  [31:0]                  wb_data_o
 );
 
-    assign  wb_flag_o   =   wb_flag_i;
-    assign  wb_addr_o   =   wb_addr_i;
-    assign  wb_data_o   =   wb_data_i;
+    reg         wb_flag_reg;
+    reg [31:0]  wb_addr_reg;
+    reg [31:0]  wb_data_reg;
+
+    always @(posedge clk) begin
+        if (!rst_n) begin
+            wb_flag_reg <= 1'b0;
+            wb_addr_reg <= 'd0;
+            wb_data_reg <= 'd0;
+        end else begin
+            wb_flag_reg <= wb_flag_i;
+            wb_addr_reg <= wb_addr_i;
+            wb_data_reg <= wb_data_i;
+        end
+    end
+
+    assign  wb_flag_o   =   wb_flag_reg;
+    assign  wb_addr_o   =   wb_addr_reg;
+    assign  wb_data_o   =   wb_data_reg;
 
     /*reg [31:0]  wb_data;
     always@(*) begin

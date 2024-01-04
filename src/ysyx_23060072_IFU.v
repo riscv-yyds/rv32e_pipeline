@@ -32,7 +32,9 @@ module ysyx_23060072_IFU(
 
     //rom initial
     initial begin
-        $readmemh("../bin/lui_auipc.txt", rom);
+        //$readmemh("../bin/add_addi_sub.txt", rom);
+        //$readmemh("../bin/lui_auipc.txt", rom);
+        $readmemh("../bin/store_load.txt", rom);
     end
 	
     assign inst_rdata_o = rom[read_addr];
