@@ -20,12 +20,6 @@ module ysyx_23060072_tb;
         .rst_n      (rst_n  )
     );
 
-    /*initial begin
-        //$readmemh("./rom_hex.txt", rom);
-        //$readmemb("./rom_binary.txt", u_core.if_stage.ifu.rom);
-        $readmemb("C:/Users/Administrator/Desktop/MAI/file/rv32e_pipeline/rom_binary.txt", u_core.if_stage.ifu.rom);
-    end*/
-
     initial  begin
         $fsdbDumpfile("rv32e_pipeline.fsdb");
         $fsdbDumpvars(0);
