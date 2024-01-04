@@ -31,18 +31,18 @@ module ysyx_23060072_regfile(
     // 对于三级流水，如果上一条指令写回的地址刚好为本指令的读地址，直接把ex阶段的wb_data连接到读数据端口即可，
     // 因为上一条指令的ex和本指令的id发生在同一个clk
     always@(*) begin
-        if( wb_flag_i && (rega_raddr_i==wb_reg_addr_i) && (rega_raddr_i!=32'b0) )
+        if( wb_flag_i && (rega_raddr_i==wb_reg_addr_i) && (rega_raddr_i!=5'd0) )
             rega_rdata_o = wb_wdata_i;
-        else if (rega_raddr_i == 32'b0)
+        else if (rega_raddr_i == 5'd0)
             rega_rdata_o = 32'b0;
         else
             rega_rdata_o = rf_reg[rega_raddr_i];
     end
 
     always@(*) begin
-        if( wb_flag_i && (regb_raddr_i==wb_reg_addr_i) && (regb_raddr_i!=32'b0) )
+        if( wb_flag_i && (regb_raddr_i==wb_reg_addr_i) && (regb_raddr_i!=5'd0) )
             regb_rdata_o = wb_wdata_i;
-        else if (regb_raddr_i == 32'b0)
+        else if (regb_raddr_i == 5'd0)
             regb_rdata_o = 32'b0;
         else
             regb_rdata_o = rf_reg[regb_raddr_i];

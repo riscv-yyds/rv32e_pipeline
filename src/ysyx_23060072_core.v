@@ -8,7 +8,7 @@ module ysyx_23060072_core(
     // if2id
     wire [31:0]     if2id_pc;
     wire [31:0]     if2id_instr_rdata;
-    wire            if2id_timer_interrupt = 0;
+    wire            if2id_timer_interrupt = 1'b0;
 
     // id2ex
     wire [31:0]     id2ex_pc;
@@ -32,7 +32,7 @@ module ysyx_23060072_core(
     wire            ex2lsu_store_flag;            
     wire            ex2lsu_load_flag;            
     wire            ex2lsu_LSU_sighed;            
-    wire [31:0]     ex2lsu_wb_addr;            
+    wire [4:0]      ex2lsu_wb_addr;            
     wire [31:0]     ex2lsu_operand_a;            
     wire [31:0]     ex2lsu_operand_b;            
     wire [31:0]     ex2lsu_operand_imm;            
@@ -192,7 +192,6 @@ module ysyx_23060072_core(
 
 
 /*(* DONT_TOUCH = "true|yes" *)*/ ysyx_23060072_controller   controller( 
-                                .clk                    (clk                    ),
                                 .rst_n                  (rst_n                  ),
                                 .predict_flag_i         (if2ctrl_predict_flag   ),
                                 .jump_flag_i            (ex2ctrl_jump_flag      ),
@@ -214,13 +213,13 @@ module ysyx_23060072_core(
                                 .id2ex_has_rs2          (id2fw_has_rs2          ),
                                 .ex2lsu_wb_flag         (ex2lsu_wb_flag         ),
                                 .lsu2wb_wb_flag         (lsu2wb_wb_flag         ),
-                                .lsu2wb_load_flag       (lsu2wb_load_flag       ),
+                                .lsu2wb_load_flag       (lsu2fw_load_flag       ),
                                 .ex2lsu_store_flag      (ex2lsu_store_flag      ),
                                 .ex2lsu_wb_addr         (ex2lsu_wb_addr         ),
                                 .lsu2wb_wb_addr         (lsu2wb_wb_addr         ),
                                 .id2ex_rs1_addr         (id2fw_id_ex_rs1_addr   ),
                                 .id2ex_rs2_addr         (id2fw_id_ex_rs2_addr   ),
-                                .ex2lsu_wb_data_ex      (ex2lsu_wb_data         ),
+                                .ex2lsu_wb_data_ex      (ex2lsu_wb_data_ex      ),
                                 .lsu2wb_wb_data_lsu     (lsu2wb_wb_data_lsu     ),
                                 .id2ex_operand_a        (id2fw_operand_a        ),
                                 .id2ex_operand_b        (id2fw_operand_b        ),

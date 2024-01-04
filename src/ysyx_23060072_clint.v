@@ -12,7 +12,7 @@ module ysyx_23060072_clint(
     input    [2:0]                 csr_opcode_i,   // csr指令类型
     input    [11:0]                csr_addr_i,     // csr的寄存器地址（确定是哪个寄存器）
     input    [31:0]                operand_a_i,
-    input    [31:0]                operand_b_i,
+    //input    [31:0]                operand_b_i,
 
     // to wb_stage
     output   [31:0]                csr_wb_wdata_o,
@@ -115,7 +115,6 @@ module ysyx_23060072_clint(
                 `ysyx_23060072_CSR_MCAUSE:     MCAUSE <=  csr_wdata;
                 `ysyx_23060072_CSR_MTVAL:      MTVAL <=  csr_wdata;
                 `ysyx_23060072_CSR_MIP:        MIP <=  csr_wdata;
-                default: ;
             endcase
         end
     end

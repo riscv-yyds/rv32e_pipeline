@@ -16,7 +16,7 @@ module ysyx_23060072_decoder(
     */
 
     // to ex_stage
-    output   [3:0]                 alu_op_o,
+    output   [4:0]                 alu_op_o,
     output   [31:0]                operand_a_o,
     output   [31:0]                operand_b_o,
     output   [31:0]                operand_imm_o,
@@ -179,7 +179,7 @@ module ysyx_23060072_decoder(
     reg [31:0]  operand_a_reg;
     reg [31:0]  operand_b_reg;
     reg [31:0]  operand_imm_reg;
-    reg [3:0]   alu_op_reg;
+    reg [4:0]   alu_op_reg;
 
     assign  operand_a_o     =   operand_a_reg;
     assign  operand_b_o     =   operand_b_reg;

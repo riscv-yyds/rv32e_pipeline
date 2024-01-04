@@ -34,7 +34,7 @@ module ysyx_23060072_ex_stage(
     output   [31:0]                         jump_pc_o,
     output                                  clint_hold_flag_o,
     output                                  clint_jump_flag_o,
-    output                                  clint_jump_pc_o,
+    output   [31:0]                         clint_jump_pc_o,
     output                                  multdiv_hold_flag_o,
 
     // to lsu_stage
@@ -52,7 +52,7 @@ module ysyx_23060072_ex_stage(
     output  reg [31:0]                      wb_data_ex_o
 );
 
-
+    wire            csr_wb_flag;
     wire            clint_jump_flag;
     wire            clint_hold_flag;
     wire            multdiv_hold_flag;
@@ -80,8 +80,8 @@ module ysyx_23060072_ex_stage(
                                 .pc_i               (pc_i                   ),
                                 .csr_opcode_i       (csr_opcode_i           ),
                                 .csr_addr_i         (csr_addr_i             ),
-                                .operand_a_i        (operand_a              ),
-                                .operand_b_i        (operand_b              ),
+                                .operand_a_i        (operand_a_i            ),
+                                //.operand_b_i        (operand_b_i            ),
                                 //.timer_interrupt_i  (timer_interrupt_i      ),
                                 .clint_hold_flag_o  (clint_hold_flag_o      ),
                                 .clint_jump_pc_o    (clint_jump_pc_o        ),

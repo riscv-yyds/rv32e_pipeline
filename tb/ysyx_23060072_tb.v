@@ -5,11 +5,11 @@ module ysyx_23060072_tb;
     reg rst_n;
 
     initial begin
-        clk = 0;
-        rst_n = 0;
-        #100;
-        rst_n = 1;
-        #5000;
+        clk = 1'b0;
+        rst_n = 1'b0;
+        #100
+        rst_n = 1'b1;
+        #5000
         $finish;
     end
 

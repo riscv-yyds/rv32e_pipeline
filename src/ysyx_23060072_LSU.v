@@ -212,6 +212,7 @@ module ysyx_23060072_LSU(
 
     wire [31:0] mem_addr;
     wire        ren;
+    wire [1:0]  data_offset;
 
     reg         wen;
     reg  [7:0]  wmask;
