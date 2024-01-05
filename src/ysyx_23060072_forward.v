@@ -25,7 +25,7 @@ module ysyx_23060072_forward(
 
     output reg  [31:0]  operand_a_ex_stage,
     output reg  [31:0]  operand_b_ex_stage,
-    output reg  [31:0]  operand_b_lsu_stage
+    output      [31:0]  operand_b_lsu_stage
 );
 	
     wire    [1:0]   forwardA;
@@ -42,8 +42,9 @@ module ysyx_23060072_forward(
     /* rs2 lsu 前递*/
 	assign forwardB[0] = (lsu2wb_wb_flag && id2ex_has_rs2 && (lsu2wb_wb_addr!=5'd0) && (lsu2wb_wb_addr==id2ex_rs2_addr));
 
+    // unnecessary
     // 在发生加载——使用型冒险的时候，如果是load后跟着store指令，
-    // 并且load指令的rd与store指令的rs1 不同而与rs2相同，则不需要停顿，
+    // 并且load指令的rd与store指令的 rs1(write address) 不同而与 rs2(write data) 相同，则不需要停顿，
     // 只需要将MEM/WB 寄存器的数据前递到MEM阶段。
 	assign forwardC = (lsu2wb_load_flag && ex2lsu_store_flag && (lsu2wb_wb_addr!=5'd0) && (lsu2wb_wb_addr!=id2ex_rs1_addr) && (lsu2wb_wb_addr==id2ex_rs2_addr));
 	
@@ -79,15 +80,16 @@ module ysyx_23060072_forward(
         end
     end   
 
+    assign operand_b_lsu_stage  =   ex2lsu_operand_b;
 
     // lsu_stage
-    always@(*) begin
+    /*always@(*) begin
         if (forwardC) begin
             operand_b_lsu_stage   =   lsu2wb_wb_data_lsu;
         end else begin
             operand_b_lsu_stage   =   ex2lsu_operand_b;
         end
-    end
+    end*/
 
 
 endmodule

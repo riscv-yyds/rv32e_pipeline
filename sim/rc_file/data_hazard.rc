@@ -1,0 +1,76 @@
+Magic 271485
+Revision Verdi_O-2018.09-SP2
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 38 3838 720 649 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/ICer/myprj/rv32e_pipeline/sim/rv32e_pipeline.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 0.000000 637500.000000
+cursor 260000.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 6
+; marker line index
+markerPos 15
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/home/ICer/myprj/rv32e_pipeline/sim/rv32e_pipeline.fsdb"
+addSignal -h 25 /ysyx_23060072_tb/u_core/id_stage/regfile/rf_reg[0:31]
+addSignal -h 25 /ysyx_23060072_tb/u_core/clk
+addSignal -h 25 -holdScope rst_n
+addSignal -h 25 -holdScope if2id_instr_rdata[31:0]
+addSignal -h 25 -holdScope if2id_pc[31:0]
+addGroup "G2"
+addSignal -h 25 /ysyx_23060072_tb/u_core/id2ex_pc[31:0]
+addSignal -h 25 /ysyx_23060072_tb/u_core/forward/id2ex_rs1_addr[4:0]
+addSignal -h 25 -UNSIGNED -HEX /ysyx_23060072_tb/u_core/ex2lsu_wb_addr[4:0]
+addSignal -h 25 /ysyx_23060072_tb/u_core/forward/forwardA[1]
+addSignal -h 25 -holdScope lsu2wb_wb_addr[4:0]
+addSignal -h 25 -holdScope forwardB[0]
+addSignal -h 25 -holdScope operand_a_ex_stage[31:0]
+addSignal -h 25 -holdScope operand_b_ex_stage[31:0]
+addSignal -h 25 -holdScope id2ex_operand_a[31:0]
+addGroup "G3"
+addSignal -h 25 -UNSIGNED -HEX /ysyx_23060072_tb/u_core/forward/id2ex_rs2_addr[4:0]
+addSignal -h 25 -UNSIGNED -HEX /ysyx_23060072_tb/u_core/ex2lsu_wb_addr[4:0]
+addSignal -h 25 /ysyx_23060072_tb/u_core/forward/forwardB[1]
+addSignal -h 25 -holdScope ex2lsu_wb_flag
+addSignal -h 25 -holdScope id2ex_has_rs2
+addSignal -h 25 /ysyx_23060072_tb/u_core/id_stage/has_rs1_o
+addGroup "G4"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+

@@ -15,6 +15,11 @@ module ysyx_23060072_wb_stage(
     output  [31:0]                  wb_data_o
 );
 
+    assign  wb_flag_o   =   wb_flag_i;
+    assign  wb_addr_o   =   wb_addr_i;
+    assign  wb_data_o   =   wb_data_i;
+
+/*
     reg         wb_flag_reg;
     reg [4:0]   wb_addr_reg;
     reg [31:0]  wb_data_reg;
@@ -34,6 +39,7 @@ module ysyx_23060072_wb_stage(
     assign  wb_flag_o   =   wb_flag_reg;
     assign  wb_addr_o   =   wb_addr_reg;
     assign  wb_data_o   =   wb_data_reg;
+*/
 
     /*reg [31:0]  wb_data;
     always@(*) begin

@@ -67,7 +67,8 @@ module ysyx_23060072_decoder(
                             (opcode != 7'b0110111) 
                         &&  (opcode != 7'b0010111) 
                             /* J-type */
-                        &&  (opcode != 7'b1101111);
+                        &&  (opcode != 7'b1101111)
+                        &&  (opcode != 7'b0000000); // no type
 
     assign  has_rs2 =       /* U-type */   
                             (opcode != 7'b0110111) 
@@ -78,7 +79,8 @@ module ysyx_23060072_decoder(
                         &&  (opcode != 7'b0010011)
                         &&  (opcode != 7'b0000011)
                         &&  (opcode != 7'b1100111)  // jalr
-                        &&  (opcode != 7'b1110011);
+                        &&  (opcode != 7'b1110011)
+                        &&  (opcode != 7'b0000000); // no type
                         
 
     // csr opcode

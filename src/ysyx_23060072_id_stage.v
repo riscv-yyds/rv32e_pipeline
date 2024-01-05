@@ -44,8 +44,8 @@ module ysyx_23060072_id_stage(
     // to forward
     output reg   [4:0]                         id2ex_rs1_addr_o,  
     output reg   [4:0]                         id2ex_rs2_addr_o,
-    output                                     has_rs1_o,  
-    output                                     has_rs2_o 
+    output reg                                 has_rs1_o,  
+    output reg                                 has_rs2_o 
 );
 
 
@@ -55,8 +55,11 @@ module ysyx_23060072_id_stage(
 
     wire [31:0] rega_rdata;
     wire [31:0] regb_rdata;
-    wire [4:0] rega_raddr;
-    wire [4:0] regb_raddr;
+    wire [4:0]  rega_raddr;
+    wire [4:0]  regb_raddr;
+
+    wire has_rs1;
+    wire has_rs2;
 
     wire [31:0] operand_a;
     wire [31:0] operand_b;
@@ -96,10 +99,11 @@ module ysyx_23060072_id_stage(
                                 .csr_addr_o(csr_addr),
                                 .multdiv_opcode_o(multdiv_opcode),
                                 .multdiv_en_o(multdiv_en),
-                                .has_rs1(has_rs1_o),
-                                .has_rs2(has_rs2_o));
+                                .has_rs1(has_rs1),
+                                .has_rs2(has_rs2));
 
-    /*(* DONT_TOUCH = "true|yes" *)*/ysyx_23060072_regfile regfile(   .clk(clk),
+    /*(* DONT_TOUCH = "true|yes" *)*/ysyx_23060072_regfile regfile(   
+                                .clk(clk),
                                 .rst_n(rst_n),
                                 .rega_raddr_i(rega_raddr),
                                 .regb_raddr_i(regb_raddr),
@@ -120,6 +124,8 @@ module ysyx_23060072_id_stage(
             timer_interrupt_o <=  `ysyx_23060072_disable;
             alu_op_o <=  `ysyx_23060072_ALU_NOP;
             multdiv_en_o <=  `ysyx_23060072_disable;
+            has_rs1_o <= `ysyx_23060072_disable;
+            has_rs2_o <= `ysyx_23060072_disable;
         end
         else if(clean_flag_i) begin
             wb_flag_o <=  `ysyx_23060072_disable;
@@ -128,6 +134,8 @@ module ysyx_23060072_id_stage(
             timer_interrupt_o <=  `ysyx_23060072_disable;
             alu_op_o <=  `ysyx_23060072_ALU_NOP;
             multdiv_en_o <=  `ysyx_23060072_disable;
+            has_rs1_o <= `ysyx_23060072_disable;
+            has_rs2_o <= `ysyx_23060072_disable;
         end else if(!id_hold_flag_i) begin
             wb_flag_o <=  wb_flag;
             load_flag_o <=  load_flag;
@@ -135,6 +143,8 @@ module ysyx_23060072_id_stage(
             timer_interrupt_o <=  timer_interrupt_i;
             alu_op_o <=  alu_op;
             multdiv_en_o <=  multdiv_en;
+            has_rs1_o <= has_rs1;
+            has_rs2_o <= has_rs2;
         end else begin
             wb_flag_o <=  wb_flag_o;
             load_flag_o <=  load_flag_o;
@@ -142,6 +152,8 @@ module ysyx_23060072_id_stage(
             timer_interrupt_o <=  timer_interrupt_o;
             alu_op_o <=  alu_op_o;
             multdiv_en_o <=  multdiv_en_o;
+            has_rs1_o <= has_rs1_o;
+            has_rs2_o <= has_rs2_o;
         end
     end
 
