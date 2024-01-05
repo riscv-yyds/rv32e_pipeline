@@ -36,8 +36,8 @@ module ysyx_23060072_IFU(
         //$readmemh("../bin/lui_auipc.txt", rom);
         //$readmemh("../bin/store_load.txt", rom);
         //$readmemh("../bin/and_or_xor.txt", rom);
-        $readmemh("../bin/data_hazards.txt", rom);
-        //$readmemh("../bin/sw_lw_hazards.txt", rom);
+        //$readmemh("../bin/data_hazards.txt", rom);
+        $readmemh("../bin/sw_lw_hazards.txt", rom);
     end
 	
     assign inst_rdata_o = rom[read_addr];

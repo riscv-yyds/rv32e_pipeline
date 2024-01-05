@@ -236,17 +236,31 @@ module ysyx_23060072_decoder(
                                     endcase
                             end
 
-            `ysyx_23060072_OPCODE_LOAD:    begin   
+            /*`ysyx_23060072_OPCODE_LOAD:    begin   
                                     operand_a_reg = rega_rdata;
                                     operand_b_reg = imm_i_type;
                                     operand_imm_reg = 32'b0;
                                     alu_op_reg = `ysyx_23060072_ALU_NOP;
+                            end*/
+
+            `ysyx_23060072_OPCODE_LOAD:    begin   
+                                    operand_a_reg = rega_rdata;
+                                    operand_b_reg = 32'd0;          // load hasn't rs2
+                                    operand_imm_reg = imm_i_type;
+                                    alu_op_reg = `ysyx_23060072_ALU_NOP;
                             end
 
-            `ysyx_23060072_OPCODE_STORE:   begin   
+            /*`ysyx_23060072_OPCODE_STORE:   begin   
                                     operand_a_reg = rega_rdata;
                                     operand_b_reg = imm_s_type;
                                     operand_imm_reg = regb_rdata;   // regb of store to operand_imm !!!
+                                    alu_op_reg = `ysyx_23060072_ALU_NOP;
+                            end*/
+
+            `ysyx_23060072_OPCODE_STORE:   begin   
+                                    operand_a_reg = rega_rdata;
+                                    operand_b_reg = regb_rdata;     // store hasn't rd  
+                                    operand_imm_reg = imm_s_type;
                                     alu_op_reg = `ysyx_23060072_ALU_NOP;
                             end
 

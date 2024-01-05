@@ -1,8 +1,5 @@
 `include "ysyx_23060072_define.v"
 module ysyx_23060072_wb_stage(
-    input                           clk,
-    input                           rst_n,
-
     // from wb_stage
     // pipeline control signal (lsu_stage to wb_stage)
     input                           wb_flag_i,

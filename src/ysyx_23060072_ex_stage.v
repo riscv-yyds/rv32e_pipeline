@@ -8,6 +8,8 @@ module ysyx_23060072_ex_stage(
     input    [31:0]                         pc_i,
     input                                   timer_interrupt_i,
     //ALU
+    input    [4:0]                          rs1_addr_i,
+    input    [4:0]                          rs2_addr_i,
     input    [31:0]                         operand_a_i,
     input    [31:0]                         operand_b_i,
     input    [31:0]                         operand_imm_i,
@@ -46,6 +48,8 @@ module ysyx_23060072_ex_stage(
     output  reg                             LSU_signed_o,
     // pipeline data flow (ex_stage to lsu_stage)
     output  reg [4:0]                       wb_addr_o,
+    output  reg [4:0]                       rs1_addr_o,
+    output  reg [4:0]                       rs2_addr_o,
     output  reg [31:0]                      operand_a_o,
     output  reg [31:0]                      operand_b_o,
     output  reg [31:0]                      operand_imm_o,
@@ -148,6 +152,8 @@ module ysyx_23060072_ex_stage(
             // from id_stage
             wb_addr_o           <=  5'd0;
             // lsu needed
+            rs1_addr_o          <=  5'd0;
+            rs2_addr_o          <=  5'd0;
             operand_a_o         <=  32'd0;  
             operand_b_o         <=  32'd0;  
             operand_imm_o       <=  32'd0; 
@@ -157,6 +163,8 @@ module ysyx_23060072_ex_stage(
             // from id_stage
             wb_addr_o           <=  wb_reg_waddr_i;
             // lsu needed
+            rs1_addr_o          <=  rs1_addr_i;
+            rs2_addr_o          <=  rs2_addr_i;
             operand_a_o         <=  operand_a_i;  
             operand_b_o         <=  operand_b_i;  
             operand_imm_o       <=  operand_imm_i;  
@@ -166,6 +174,8 @@ module ysyx_23060072_ex_stage(
             // from id_stage
             wb_addr_o           <=  wb_addr_o;
             // lsu needed
+            rs1_addr_o          <=  rs1_addr_o;
+            rs2_addr_o          <=  rs2_addr_o;
             operand_a_o         <=  operand_a_o;  
             operand_b_o         <=  operand_b_o;  
             operand_imm_o       <=  operand_imm_o;  

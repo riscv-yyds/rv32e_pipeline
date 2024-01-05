@@ -1,0 +1,74 @@
+Magic 271485
+Revision Verdi_O-2018.09-SP2
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 38 3838 828 872 184
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/ICer/myprj/rv32e_pipeline/sim/rv32e_pipeline.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 0.000000 1275000.000000
+cursor 340000.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 0
+; marker line index
+markerPos 12
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G4"
+activeDirFile "" "/home/ICer/myprj/rv32e_pipeline/sim/rv32e_pipeline.fsdb"
+addSignal -h 24 /ysyx_23060072_tb/u_core/id_stage/decoder/instr_rdata_i[31:0]
+addSignal -h 24 -holdScope pc_i[31:0]
+addSignal -h 24 /ysyx_23060072_tb/u_core/id_stage/regfile/rf_reg[0:31]
+addGroup "G5"
+addSignal -h 25 /ysyx_23060072_tb/u_core/lsu_stage/lsu/load_flag_i
+addSignal -h 25 -holdScope store_flag_i
+addSignal -h 25 -holdScope mem_addr[9:0]
+addSignal -h 25 /ysyx_23060072_tb/u_core/forward/forwardC
+addSignal -h 25 -holdScope ex2lsu_store_flag
+addSignal -h 25 -holdScope lsu2wb_load_flag
+addSignal -h 25 -holdScope operand_b_lsu_stage[31:0]
+addSignal -h 25 -holdScope lsu2wb_wb_data_lsu[31:0]
+addSignal -h 25 -UNSIGNED -HEX -holdScope lsu2wb_wb_addr[4:0]
+addSignal -h 25 -holdScope id2ex_rs1_addr[4:0]
+addSignal -h 25 -UNSIGNED -HEX -holdScope id2ex_rs2_addr[4:0]
+addGroup "G3"
+addSignal -h 25 -UNSIGNED -HEX /ysyx_23060072_tb/u_core/lsu_stage/lsu/mem_wdata[31:0]
+addSignal -h 25 -UNSIGNED -HEX -holdScope operand_b_i[31:0]
+addSignal -h 25 -holdScope mem[10:0]
+addSignal -h 25 -holdScope operand_imm_i[31:0]
+addGroup "G6"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+

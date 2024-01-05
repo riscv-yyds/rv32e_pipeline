@@ -223,14 +223,15 @@ module ysyx_23060072_LSU(
     reg         LSU_wb_flag_reg;
     reg         LSU_hold_flag_reg;
 
+    assign  mem_addr   =   operand_imm_i + operand_a_i;
+
     assign  ren             =   load_flag_i;
-    assign  mem_addr        =   operand_a_i + operand_b_i;
     assign  data_offset     =   mem_addr[1:0];
     assign  wb_wdata_o      =   wb_wdata_reg;
     assign  LSU_wb_flag_o   =   LSU_wb_flag_reg;
     assign  LSU_hold_flag_o =   LSU_hold_flag_reg;  
 
-    reg [31:0] mem [1023:0];
+    reg [31:0] mem [10:0];
 
     // **************************************** load ****************************************// 
     always @(*) begin
@@ -285,22 +286,22 @@ module ysyx_23060072_LSU(
         case(LSU_type_i)
             2'b00:  begin
                         case(data_offset)
-                            2'b00: mem_wdata = { rdata[31:8], operand_imm_i[7:0] };
-                            2'b01: mem_wdata = { rdata[31:16], operand_imm_i[7:0], rdata[7:0] };
-                            2'b10: mem_wdata = { rdata[31:24], operand_imm_i[7:0], rdata[15:0] };
-                            2'b11: mem_wdata = { operand_imm_i[7:0], rdata[23:0] };
+                            2'b00: mem_wdata = { rdata[31:8], operand_b_i[7:0] };
+                            2'b01: mem_wdata = { rdata[31:16], operand_b_i[7:0], rdata[7:0] };
+                            2'b10: mem_wdata = { rdata[31:24], operand_b_i[7:0], rdata[15:0] };
+                            2'b11: mem_wdata = { operand_b_i[7:0], rdata[23:0] };
                             default: mem_wdata = 32'b0;
                         endcase
                     end
             2'b01:  begin
                         case(data_offset)
-                            2'b00: mem_wdata = { rdata[31:16], operand_imm_i[15:0] };
-                            2'b01: mem_wdata = { rdata[31:24], operand_imm_i[15:0], rdata[7:0] };
-                            2'b10: mem_wdata = { operand_imm_i[15:0], rdata[15:0] };
+                            2'b00: mem_wdata = { rdata[31:16], operand_b_i[15:0] };
+                            2'b01: mem_wdata = { rdata[31:24], operand_b_i[15:0], rdata[7:0] };
+                            2'b10: mem_wdata = { operand_b_i[15:0], rdata[15:0] };
                             default: mem_wdata = 32'b0;
                         endcase
                     end
-            2'b10:  mem_wdata = operand_imm_i;
+            2'b10:  mem_wdata = operand_b_i;
             default: mem_wdata = 32'b0;
         endcase
     end

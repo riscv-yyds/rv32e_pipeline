@@ -9,23 +9,27 @@
 module ysyx_23060072_forward(
     input           id2ex_has_rs1,
     input           id2ex_has_rs2,
-    input           ex2lsu_wb_flag,
-    input           lsu2wb_wb_flag,
-    input           lsu2wb_load_flag,
-    input           ex2lsu_store_flag,
-    input   [4:0]   ex2lsu_wb_addr,
-    input   [4:0]   lsu2wb_wb_addr,
     input   [4:0]   id2ex_rs1_addr,
     input   [4:0]   id2ex_rs2_addr,
-    input   [31:0]  ex2lsu_wb_data_ex,
-    input   [31:0]  lsu2wb_wb_data_lsu,
     input   [31:0]  id2ex_operand_a,
     input   [31:0]  id2ex_operand_b,
+
+    input           ex2lsu_wb_flag,
+    input           ex2lsu_store_flag,
+    input   [4:0]   ex2lsu_wb_addr,
+    input   [31:0]  ex2lsu_wb_data_ex,
     input   [31:0]  ex2lsu_operand_b,
+    input   [4:0]   ex2lsu_rs1_addr,
+    input   [4:0]   ex2lsu_rs2_addr,
+
+    input           lsu2wb_wb_flag,
+    input           lsu2wb_load_flag,
+    input   [4:0]   lsu2wb_wb_addr,
+    input   [31:0]  lsu2wb_wb_data_lsu,
 
     output reg  [31:0]  operand_a_ex_stage,
     output reg  [31:0]  operand_b_ex_stage,
-    output      [31:0]  operand_b_lsu_stage
+    output reg  [31:0]  operand_b_lsu_stage
 );
 	
     wire    [1:0]   forwardA;
@@ -46,7 +50,7 @@ module ysyx_23060072_forward(
     // 在发生加载——使用型冒险的时候，如果是load后跟着store指令，
     // 并且load指令的rd与store指令的 rs1(write address) 不同而与 rs2(write data) 相同，则不需要停顿，
     // 只需要将MEM/WB 寄存器的数据前递到MEM阶段。
-	assign forwardC = (lsu2wb_load_flag && ex2lsu_store_flag && (lsu2wb_wb_addr!=5'd0) && (lsu2wb_wb_addr!=id2ex_rs1_addr) && (lsu2wb_wb_addr==id2ex_rs2_addr));
+	assign forwardC = (lsu2wb_load_flag && ex2lsu_store_flag && (lsu2wb_wb_addr!=5'd0) && (lsu2wb_wb_addr!=ex2lsu_rs1_addr) && (lsu2wb_wb_addr==ex2lsu_rs2_addr));
 	
 	
 	//load-use
@@ -80,16 +84,16 @@ module ysyx_23060072_forward(
         end
     end   
 
-    assign operand_b_lsu_stage  =   ex2lsu_operand_b;
+    //assign operand_b_lsu_stage  =   ex2lsu_operand_b;
 
     // lsu_stage
-    /*always@(*) begin
+    always@(*) begin
         if (forwardC) begin
             operand_b_lsu_stage   =   lsu2wb_wb_data_lsu;
         end else begin
             operand_b_lsu_stage   =   ex2lsu_operand_b;
         end
-    end*/
+    end
 
 
 endmodule
