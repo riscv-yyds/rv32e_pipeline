@@ -11,6 +11,7 @@ module ysyx_23060072_lsu_stage(
     input                               load_flag_i,
     input                               LSU_signed_i,
     // pipeline data flow (ex_stage to lsu_stage)
+    input   [31:0]                      pc_i,
     input   [4:0]                       wb_addr_i,
     input   [31:0]                      wb_data_i,
     input   [31:0]                      operand_a_i,
@@ -20,6 +21,7 @@ module ysyx_23060072_lsu_stage(
     // to wb_stage
     // pipeline control signal (lsu_stage to wb_stage)
     output  reg                         wb_flag_o,
+    output  reg [31:0]                  pc_o,
     // pipeline data flow (lsu_stage to wb_stage)
     output  reg [4:0]                   wb_addr_o,           
     output  reg [31:0]                  wb_data_lsu_o,
@@ -74,17 +76,20 @@ module ysyx_23060072_lsu_stage(
             // from ex_stage
             wb_addr_o           <=  5'd0;
             // from lsu_stage
-            wb_data_lsu_o      <=  32'd0;
+            pc_o                <=  32'd0;
+            wb_data_lsu_o       <=  32'd0;
         end else if (!LSU_hold_flag_o) begin
             // from ex_stage
             wb_addr_o           <=  wb_addr_i;
             // from lsu_stage
-            wb_data_lsu_o      <=  wb_data_lsu;
+            pc_o                <=  pc_i;
+            wb_data_lsu_o       <=  wb_data_lsu;
         end else begin
             // from ex_stage
             wb_addr_o           <=  wb_addr_o;
             // from lsu_stage
-            wb_data_lsu_o      <=  wb_data_lsu_o;
+            pc_o                <=  pc_o;
+            wb_data_lsu_o       <=  wb_data_lsu_o;
         end
     end
 

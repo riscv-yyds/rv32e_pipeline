@@ -7,6 +7,7 @@ module ysyx_23060072_ex_stage(
     // from id_stage
     input    [31:0]                         pc_i,
     input                                   timer_interrupt_i,
+    input                                   predict_flag_i,
     //ALU
     input    [4:0]                          rs1_addr_i,
     input    [4:0]                          rs2_addr_i,
@@ -38,6 +39,7 @@ module ysyx_23060072_ex_stage(
     output                                  clint_jump_flag_o,
     output   [31:0]                         clint_jump_pc_o,
     output                                  multdiv_hold_flag_o,
+    output                                  predict_flag_o,
 
     // to lsu_stage
     // pipeline control signal (ex_stage to lsu_stage)
@@ -47,6 +49,7 @@ module ysyx_23060072_ex_stage(
     output  reg                             load_flag_o,
     output  reg                             LSU_signed_o,
     // pipeline data flow (ex_stage to lsu_stage)
+    output  reg [31:0]                      pc_o,
     output  reg [4:0]                       wb_addr_o,
     output  reg [4:0]                       rs1_addr_o,
     output  reg [4:0]                       rs2_addr_o,
@@ -104,6 +107,7 @@ module ysyx_23060072_ex_stage(
                                 .hold_flag_o        (multdiv_hold_flag_o    ));*/
 
     assign  multdiv_hold_flag_o =   1'b0;
+    assign  predict_flag_o = predict_flag_i;
 
     reg [31:0]  wb_data_ex;
     always@(*) begin
@@ -152,6 +156,7 @@ module ysyx_23060072_ex_stage(
             // from id_stage
             wb_addr_o           <=  5'd0;
             // lsu needed
+            pc_o                <=  32'd0;
             rs1_addr_o          <=  5'd0;
             rs2_addr_o          <=  5'd0;
             operand_a_o         <=  32'd0;  
@@ -163,6 +168,7 @@ module ysyx_23060072_ex_stage(
             // from id_stage
             wb_addr_o           <=  wb_reg_waddr_i;
             // lsu needed
+            pc_o                <=  pc_i;
             rs1_addr_o          <=  rs1_addr_i;
             rs2_addr_o          <=  rs2_addr_i;
             operand_a_o         <=  operand_a_i;  
@@ -174,6 +180,7 @@ module ysyx_23060072_ex_stage(
             // from id_stage
             wb_addr_o           <=  wb_addr_o;
             // lsu needed
+            pc_o                <=  pc_o;
             rs1_addr_o          <=  rs1_addr_o;
             rs2_addr_o          <=  rs2_addr_o;
             operand_a_o         <=  operand_a_o;  

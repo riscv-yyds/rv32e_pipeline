@@ -26,7 +26,8 @@ module ysyx_23060072_simple_bpu(
     assign imm_b_type = { {19{instr_rdata_i[31]}}, instr_rdata_i[31], instr_rdata_i[7], instr_rdata_i[30:25], instr_rdata_i[11:8], 1'b0 };
 
     assign predict_flag_o = ( ( (opcode_branch==`ysyx_23060072_enable) & imm_b_type[31]) | (opcode_jal==`ysyx_23060072_enable) )? `ysyx_23060072_enable : `ysyx_23060072_disable;
-    
+    //assign predict_flag_o = `ysyx_23060072_disable;
+    //assign predict_flag_o = `ysyx_23060072_enable;
 
     always@(*) begin
         case({opcode_jal, opcode_branch})

@@ -8,10 +8,12 @@ module ysyx_23060072_core(
     // if2id
     wire [31:0]     if2id_pc;
     wire [31:0]     if2id_instr_rdata;
+    wire            if2id_predict_flag;
     wire            if2id_timer_interrupt = 1'b0;
 
     // id2ex
     wire [31:0]     id2ex_pc;
+    wire            id2ex_predict_flag;
     wire            id2ex_timer_interrupt;
     wire [31:0]     id2ex_operand_imm;
     wire [4:0]      id2ex_alu_op;
@@ -31,15 +33,17 @@ module ysyx_23060072_core(
     wire [1:0]      ex2lsu_LSU_type;            
     wire            ex2lsu_store_flag;            
     wire            ex2lsu_load_flag;            
-    wire            ex2lsu_LSU_sighed;            
+    wire            ex2lsu_LSU_sighed;
+    wire [31:0]     ex2lsu_pc;            
     wire [4:0]      ex2lsu_wb_addr;            
     wire [31:0]     ex2lsu_operand_a;            
     wire [31:0]     ex2lsu_operand_imm;            
     wire [31:0]     ex2lsu_wb_data_ex;
 
     // lsu2wb
-    wire            lsu2wb_wb_flag    ;
-    wire [4:0]      lsu2wb_wb_addr    ;
+    wire            lsu2wb_wb_flag;
+    wire [31:0]     lsu2wb_pc;
+    wire [4:0]      lsu2wb_wb_addr;
     wire [31:0]     lsu2wb_wb_data_lsu;
 
     // wb2id
@@ -48,8 +52,7 @@ module ysyx_23060072_core(
     wire [31:0]     wb2id_wb_reg_data;
 
     // controller
-    wire            if2ctrl_predict_flag;
-
+    wire            ex2ctrl_predict_flag;
     wire            ex2ctrl_jump_flag;
     wire            ex2ctrl_clint_hold_flag;
     wire            ex2ctrl_clint_jump_flag;
@@ -84,6 +87,8 @@ module ysyx_23060072_core(
     wire [31:0]     fw2ex_operand_b;
     wire [31:0]     fw2lsu_operand_b;
 
+    wire            fw2ctrl_forwardD;
+
 
 
 /*(* DONT_TOUCH = "true|yes" *)*/ ysyx_23060072_if_stage     if_stage( 
@@ -93,7 +98,7 @@ module ysyx_23060072_core(
                                 .clean_flag_i           (clean_flag             ),
                                 .jump_pc_i              (ctrl2if_jump_pc        ),
                                 .pc_o                   (if2id_pc               ),
-                                .predict_flag_o         (if2ctrl_predict_flag   ),
+                                .predict_flag_o         (if2id_predict_flag     ),
                                 .instr_rdata_o          (if2id_instr_rdata      ));
 
 
@@ -103,12 +108,14 @@ module ysyx_23060072_core(
                                 .instr_rdata_i          (if2id_instr_rdata      ),
                                 .pc_i                   (if2id_pc               ),
                                 .timer_interrupt_i      (if2id_timer_interrupt  ),
+                                .predict_flag_i         (if2id_predict_flag     ),
                                 .id_hold_flag_i         (ctrl2id_hold_flag      ),
                                 .clean_flag_i           (clean_flag             ),
                                 .wb_flag_i              (wb2id_wb_flag          ),
                                 .wb_reg_addr_i          (wb2id_wb_reg_addr      ),
                                 .wb_reg_data_i          (wb2id_wb_reg_data      ),
                                 .pc_o                   (id2ex_pc               ),
+                                .predict_flag_o         (id2ex_predict_flag     ),
                                 .timer_interrupt_o      (id2ex_timer_interrupt  ),
                                 .operand_a_o            (id2fw_operand_a        ),
                                 .operand_b_o            (id2fw_operand_b        ),
@@ -124,8 +131,8 @@ module ysyx_23060072_core(
                                 .wb_flag_o              (id2ex_wb_flag          ),
                                 .multdiv_opcode_o       (id2ex_multdiv_opcode   ),
                                 .multdiv_en_o           (id2ex_multdiv_en       ),
-                                .id2ex_rs1_addr_o       (id2ex_rs1_addr   ),
-                                .id2ex_rs2_addr_o       (id2ex_rs2_addr   ),
+                                .id2ex_rs1_addr_o       (id2ex_rs1_addr         ),
+                                .id2ex_rs2_addr_o       (id2ex_rs2_addr         ),
                                 .has_rs1_o              (id2fw_has_rs1          ),
                                 .has_rs2_o              (id2fw_has_rs2          ));
 
@@ -134,9 +141,10 @@ module ysyx_23060072_core(
                                 .clk                    (clk                    ),
                                 .rst_n                  (rst_n                  ),
                                 .pc_i                   (id2ex_pc               ),
+                                .predict_flag_i         (id2ex_predict_flag     ),
                                 .timer_interrupt_i      (id2ex_timer_interrupt  ),
-                                .rs1_addr_i             (id2ex_rs1_addr   ),
-                                .rs2_addr_i             (id2ex_rs2_addr   ),
+                                .rs1_addr_i             (id2ex_rs1_addr         ),
+                                .rs2_addr_i             (id2ex_rs2_addr         ),
                                 .operand_a_i            (fw2ex_operand_a        ),
                                 .operand_b_i            (fw2ex_operand_b        ),
                                 .operand_imm_i          (id2ex_operand_imm      ),
@@ -152,6 +160,7 @@ module ysyx_23060072_core(
                                 .multdiv_en_i           (id2ex_multdiv_en       ),
                                 .multdiv_opcode_i       (id2ex_multdiv_opcode   ),
                                 .ex_hold_flag_i         (ctrl2ex_hold_flag      ),
+                                .predict_flag_o         (ex2ctrl_predict_flag   ),
                                 .jump_flag_o            (ex2ctrl_jump_flag      ),
                                 .jump_pc_o              (ex2ctrl_jump_pc        ),
                                 .clint_hold_flag_o      (ex2ctrl_clint_hold_flag),
@@ -163,6 +172,7 @@ module ysyx_23060072_core(
                                 .store_flag_o           (ex2lsu_store_flag      ),
                                 .load_flag_o            (ex2lsu_load_flag       ),
                                 .LSU_signed_o           (ex2lsu_LSU_sighed      ),
+                                .pc_o                   (ex2lsu_pc              ),
                                 .wb_addr_o              (ex2lsu_wb_addr         ),
                                 .rs1_addr_o             (ex2fw_rs1_addr         ),
                                 .rs2_addr_o             (ex2fw_rs2_addr         ),
@@ -181,12 +191,14 @@ module ysyx_23060072_core(
                                 .store_flag_i           (ex2lsu_store_flag      ),
                                 .load_flag_i            (ex2lsu_load_flag       ),
                                 .LSU_signed_i           (ex2lsu_LSU_sighed      ),
+                                .pc_i                   (ex2lsu_pc              ),
                                 .wb_addr_i              (ex2lsu_wb_addr         ),
                                 .wb_data_i              (ex2lsu_wb_data_ex      ),
                                 .operand_a_i            (ex2lsu_operand_a       ),
                                 .operand_b_i            (fw2lsu_operand_b       ),
                                 .operand_imm_i          (ex2lsu_operand_imm     ),
                                 .wb_flag_o              (lsu2wb_wb_flag         ),
+                                .pc_o                   (lsu2wb_pc              ),
                                 .wb_addr_o              (lsu2wb_wb_addr         ),      
                                 .wb_data_lsu_o          (lsu2wb_wb_data_lsu     ),
                                 .LSU_hold_flag_o        (lsu2ctrl_LSU_hold_flag ),
@@ -195,6 +207,7 @@ module ysyx_23060072_core(
 
 /*(* DONT_TOUCH = "true|yes" *)*/ ysyx_23060072_wb_stage     wb_stage(
                                 .wb_flag_i              (lsu2wb_wb_flag         ),
+                                .pc_i                   (lsu2wb_pc              ),
                                 .wb_addr_i              (lsu2wb_wb_addr         ),      
                                 .wb_data_i              (lsu2wb_wb_data_lsu     ),
                                 .wb_flag_o              (wb2id_wb_flag          ),
@@ -203,8 +216,9 @@ module ysyx_23060072_core(
 
 
 /*(* DONT_TOUCH = "true|yes" *)*/ ysyx_23060072_controller   controller( 
+                                .clk                    (clk                    ),
                                 .rst_n                  (rst_n                  ),
-                                .predict_flag_i         (if2ctrl_predict_flag   ),
+                                .predict_flag_i         (ex2ctrl_predict_flag   ),
                                 .jump_flag_i            (ex2ctrl_jump_flag      ),
                                 .jump_pc_i              (ex2ctrl_jump_pc        ),
                                 .clint_jump_flag_i      (ex2ctrl_clint_jump_flag),
@@ -212,6 +226,7 @@ module ysyx_23060072_core(
                                 .clint_hold_flag_i      (ex2ctrl_clint_hold_flag),
                                 .multdiv_hold_flag_i    (ex2ctrl_multdiv_hold_flag),
                                 .LSU_hold_flag_i        (lsu2ctrl_LSU_hold_flag ),  // from lsu
+                                .forwardD_i             (fw2ctrl_forwardD       ),
                                 .clean_flag_o           (clean_flag             ),
                                 .jump_pc_o              (ctrl2if_jump_pc        ),
                                 .if_hold_flag_o         (ctrl2if_hold_flag      ),
@@ -222,11 +237,13 @@ module ysyx_23060072_core(
 /*(* DONT_TOUCH = "true|yes" *)*/ ysyx_23060072_forward      forward( 
                                 .id2ex_has_rs1          (id2fw_has_rs1          ),
                                 .id2ex_has_rs2          (id2fw_has_rs2          ),
+                                .id2ex_store_flag       (id2ex_store_flag       ),
                                 .id2ex_rs1_addr         (id2ex_rs1_addr         ),
                                 .id2ex_rs2_addr         (id2ex_rs2_addr         ),
                                 .id2ex_operand_a        (id2fw_operand_a        ),
                                 .id2ex_operand_b        (id2fw_operand_b        ),
                                 .ex2lsu_wb_flag         (ex2lsu_wb_flag         ),
+                                .ex2lsu_load_flag       (ex2lsu_load_flag       ),
                                 .ex2lsu_store_flag      (ex2lsu_store_flag      ),
                                 .ex2lsu_wb_addr         (ex2lsu_wb_addr         ),
                                 .ex2lsu_wb_data_ex      (ex2lsu_wb_data_ex      ),
@@ -237,6 +254,7 @@ module ysyx_23060072_core(
                                 .lsu2wb_load_flag       (lsu2fw_load_flag       ),
                                 .lsu2wb_wb_addr         (lsu2wb_wb_addr         ),
                                 .lsu2wb_wb_data_lsu     (lsu2wb_wb_data_lsu     ),
+                                .forwardD               (fw2ctrl_forwardD       ),
                                 .operand_a_ex_stage     (fw2ex_operand_a        ),
                                 .operand_b_ex_stage     (fw2ex_operand_b        ),
                                 .operand_b_lsu_stage    (fw2lsu_operand_b       ));

@@ -243,7 +243,7 @@ module ysyx_23060072_LSU(
      
     // generate wb_wdata
     // LSU_signed_i: 0-signed, 1-unsigned
-    always@(*) begin
+    /*always@(*) begin
         case(LSU_type_i)
             2'b00:  begin
                         case(data_offset)
@@ -272,17 +272,50 @@ module ysyx_23060072_LSU(
             2'b10:  wb_wdata = rdata;
             default:wb_wdata = 32'b0;
         endcase
-    end
+    end*/
 
+    always@(*) begin
+        case(LSU_type_i)
+            2'b00:  begin
+                        if (!LSU_signed_i) 
+                            wb_wdata = { {24{rdata[7]}}, rdata[7:0] };
+                        else 
+                            wb_wdata = { 24'b0, rdata[7:0] };
+                    end
+            2'b01:  begin
+                        if (!LSU_signed_i) 
+                            wb_wdata = { {16{rdata[15]}}, rdata[15:0] };
+                        else 
+                            wb_wdata = { 16'b0, rdata[15:0] };
+                    end
+
+            2'b10:  wb_wdata = rdata;
+
+            default:wb_wdata = 32'b0;
+        endcase
+    end
 
 
     // **************************************** store ****************************************// 
     always@(posedge clk) begin
-        if (wen)
+        if (!rst_n) begin
+            mem[0] <= 32'd0;
+            mem[1] <= 32'd0;
+            mem[2] <= 32'd0;
+            mem[3] <= 32'd0;
+            mem[4] <= 32'd0;
+            mem[5] <= 32'd0;
+            mem[6] <= 32'd0;
+            mem[7] <= 32'd0;
+            mem[8] <= 32'd0;
+            mem[9] <= 32'd0;
+            mem[10] <= 32'd0;
+        end else if (wen) begin
             mem[mem_addr[9:0]]  <=  mem_wdata;
+        end
     end
 
-    always@(*) begin
+    /*always@(*) begin
         case(LSU_type_i)
             2'b00:  begin
                         case(data_offset)
@@ -304,8 +337,23 @@ module ysyx_23060072_LSU(
             2'b10:  mem_wdata = operand_b_i;
             default: mem_wdata = 32'b0;
         endcase
-    end
+    end*/
 
+    always@(*) begin
+        case(LSU_type_i)
+            2'b00:  begin
+                        mem_wdata = { rdata[31:8], operand_b_i[7:0] };
+                    end
+
+            2'b01:  begin
+                        mem_wdata = { rdata[31:16], operand_b_i[15:0] };  
+                    end
+
+            2'b10:  mem_wdata = operand_b_i;
+
+            default: mem_wdata = 32'd0;
+        endcase
+    end
 
     // **************************************** fsm ****************************************// 
     // 不论读写，只让他延迟一拍即可完成操作，对于读操作，只需将输出数据延迟一拍再输出即可，

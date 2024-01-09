@@ -8,6 +8,7 @@ module ysyx_23060072_id_stage(
     input    [31:0]                        instr_rdata_i,
     input    [31:0]                        pc_i,
     input                                  timer_interrupt_i,
+    input                                  predict_flag_i,
 
     // from controller
     input                                  id_hold_flag_i,
@@ -24,7 +25,8 @@ module ysyx_23060072_id_stage(
     output reg   [4:0]                         alu_op_o,
     output reg   [2:0]                         csr_opcode_o,
     output reg   [11:0]                        csr_addr_o,
-    //`ysyx_23060072_ALU
+    output reg                                 predict_flag_o,
+    // alu
     output reg   [31:0]                        operand_a_o,
     output reg   [31:0]                        operand_b_o,
     output reg   [31:0]                        operand_imm_o,
@@ -126,6 +128,7 @@ module ysyx_23060072_id_stage(
             multdiv_en_o <=  `ysyx_23060072_disable;
             has_rs1_o <= `ysyx_23060072_disable;
             has_rs2_o <= `ysyx_23060072_disable;
+            predict_flag_o <= `ysyx_23060072_disable;
         end
         else if(clean_flag_i) begin
             wb_flag_o <=  `ysyx_23060072_disable;
@@ -136,6 +139,7 @@ module ysyx_23060072_id_stage(
             multdiv_en_o <=  `ysyx_23060072_disable;
             has_rs1_o <= `ysyx_23060072_disable;
             has_rs2_o <= `ysyx_23060072_disable;
+            predict_flag_o <= `ysyx_23060072_disable;
         end else if(!id_hold_flag_i) begin
             wb_flag_o <=  wb_flag;
             load_flag_o <=  load_flag;
@@ -145,6 +149,7 @@ module ysyx_23060072_id_stage(
             multdiv_en_o <=  multdiv_en;
             has_rs1_o <= has_rs1;
             has_rs2_o <= has_rs2;
+            predict_flag_o <= predict_flag_i;
         end else begin
             wb_flag_o <=  wb_flag_o;
             load_flag_o <=  load_flag_o;
@@ -154,6 +159,7 @@ module ysyx_23060072_id_stage(
             multdiv_en_o <=  multdiv_en_o;
             has_rs1_o <= has_rs1_o;
             has_rs2_o <= has_rs2_o;
+            predict_flag_o <= predict_flag_o;
         end
     end
 

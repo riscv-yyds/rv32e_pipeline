@@ -4,6 +4,7 @@ module ysyx_23060072_wb_stage(
     // pipeline control signal (lsu_stage to wb_stage)
     input                           wb_flag_i,
     // pipeline data flow (lsu_stage to wb_stage)
+    input   [31:0]                  pc_i,
     input   [4:0]                   wb_addr_i,           
     input   [31:0]                  wb_data_i,
 
